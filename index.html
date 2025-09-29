@@ -998,4 +998,121 @@
                     <ul>
                         <li><a href="#accueil">Accueil</a></li>
                         <li><a href="#apropos">À propos</a></li>
-                        <li><a href="#services">Services</
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#evenements">Événements</a></li>
+                        <li><a href="#equipements">Équipements</a></li>
+                        <li><a href="#localisation">Localisation</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column fade-in-right">
+                    <h3>Nos services</h3>
+                    <ul>
+                        <li><a href="#">Formations professionnelles</a></li>
+                        <li><a href="#">Séminaires d'entreprise</a></li>
+                        <li><a href="#">Événements culturels</a></li>
+                        <li><a href="#">Location de salle</a></li>
+                        <li><a href="#">Organisation d'événements</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright fade-in">
+                <p>&copy; 2023 Centre Multifonctionnel Tri-Art. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script pour les animations fade in au défilement
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observer tous les éléments avec les classes d'animation
+        document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Script pour le défilement fluide vers les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Script pour le formulaire de contact (simulation d'envoi)
+        const contactForm = document.querySelector('.contact-form form');
+        if(contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Merci pour votre message! Nous vous contacterons bientôt.');
+                this.reset();
+            });
+        }
+
+        // Script pour les boutons d'inscription aux événements
+        document.querySelectorAll('.event-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const eventTitle = this.closest('.event-card').querySelector('.event-title').textContent;
+                alert(`Merci de votre intérêt pour "${eventTitle}" ! Nous vous contacterons pour finaliser votre inscription.`);
+            });
+        });
+
+        // Script pour le carrousel slide
+        const track = document.querySelector(".carousel-track");
+        if (track) {
+            const slides = Array.from(track.children);
+            const nextBtn = document.querySelector(".next");
+            const prevBtn = document.querySelector(".prev");
+            let currentIndex = 0;
+
+            // Fonction pour afficher la slide
+            function updateSlide(index) {
+                track.style.transform = `translateX(-${index * 100}%)`;
+            }
+
+            // Bouton suivant
+            if(nextBtn){
+                nextBtn.addEventListener("click", () => {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    updateSlide(currentIndex);
+                });
+            }
+
+            // Bouton précédent
+            if(prevBtn){
+                prevBtn.addEventListener("click", () => {
+                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    updateSlide(currentIndex);
+                });
+            }
+
+            // Défilement auto toutes les 5s
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlide(currentIndex);
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
