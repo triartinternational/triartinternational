@@ -291,84 +291,112 @@
             background: rgba(0,0,0,0.8);
         }
         
-        /* Événements à Venir */
+        /* Événements à Venir - Version Single Event */
         .events {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
         }
 
-        .events-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .event-card {
+        .single-event {
+            display: flex;
+            max-width: 1000px;
+            margin: 0 auto;
             background: white;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
             color: #333;
         }
 
-        .event-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        .event-date {
-            background: #e74c3c;
-            color: white;
-            padding: 20px;
-            text-align: center;
+        .event-visual {
+            flex: 1;
             position: relative;
+            min-height: 400px;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 30px;
         }
 
-        .event-day {
-            font-size: 2.5rem;
-            font-weight: bold;
-            display: block;
+        .event-date-badge {
+            text-align: center;
+            background: rgba(255,255,255,0.2);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
         }
 
         .event-month {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             text-transform: uppercase;
+            font-weight: 600;
             display: block;
+            margin-bottom: 10px;
+        }
+
+        .event-day {
+            font-size: 4rem;
+            font-weight: bold;
+            display: block;
+            line-height: 1;
+        }
+
+        .event-year {
+            font-size: 1.2rem;
+            display: block;
+            margin-top: 10px;
+            opacity: 0.9;
         }
 
         .event-content {
-            padding: 25px;
+            flex: 1.5;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .event-title {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
             color: #2c3e50;
+            line-height: 1.2;
+        }
+
+        .event-subtitle {
+            font-size: 1.4rem;
+            color: #e74c3c;
+            margin-bottom: 25px;
+            font-weight: 600;
         }
 
         .event-info {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
-            color: #666;
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 1.1rem;
         }
 
         .event-info i {
             color: #e74c3c;
-            margin-right: 10px;
+            margin-right: 15px;
             width: 20px;
+            text-align: center;
+            font-size: 1.2rem;
         }
 
         .event-description {
-            margin-top: 15px;
-            color: #555;
-            line-height: 1.5;
+            margin-top: 20px;
+            color: #666;
+            line-height: 1.6;
+            font-size: 1.1rem;
         }
 
         .event-cta {
-            margin-top: 20px;
+            margin-top: 30px;
             text-align: center;
         }
 
@@ -376,29 +404,24 @@
             background: #2c3e50;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 15px 30px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background 0.3s ease;
-            font-weight: 500;
+            transition: background 0.3s ease, transform 0.3s ease;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .event-btn:hover {
             background: #e74c3c;
+            transform: translateY(-3px);
         }
 
-        .no-events {
-            text-align: center;
-            padding: 40px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .no-events i {
-            font-size: 3rem;
-            color: #bdc3c7;
-            margin-bottom: 20px;
+        .event-highlight {
+            color: #e74c3c;
+            font-weight: bold;
         }
         
         /* Équipements */
@@ -650,8 +673,20 @@
                 height: 250px;
             }
             
-            .events-grid {
-                grid-template-columns: 1fr;
+            .single-event {
+                flex-direction: column;
+            }
+            
+            .event-visual {
+                min-height: 250px;
+            }
+            
+            .event-title {
+                font-size: 1.8rem;
+            }
+            
+            .event-subtitle {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -772,101 +807,47 @@
         </div>
     </section>
 
-    <!-- Événements à Venir -->
+    <!-- Événements à Venir - Version Single Event -->
     <section id="evenements" class="events">
         <div class="container">
             <div class="section-title">
-                <h2 class="fade-in" style="color: white;">Événements à Venir</h2>
+                <h2 class="fade-in" style="color: white;">Événement à Venir</h2>
             </div>
 
-            <div class="events-grid">
-                <!-- Événement 1 -->
-                <div class="event-card fade-in-scale stagger-delay-1">
-                    <div class="event-date">
-                        <span class="event-day">15</span>
-                        <span class="event-month">Déc 2024</span>
-                    </div>
-                    <div class="event-content">
-                        <h3 class="event-title">Festival des Arts Urbains</h3>
-                        <div class="event-info">
-                            <i class="fas fa-clock"></i>
-                            <span>14h00 - 22h00</span>
-                        </div>
-                        <div class="event-info">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Jardin Artistique Tri-Art</span>
-                        </div>
-                        <div class="event-info">
-                            <i class="fas fa-tag"></i>
-                            <span>Gratuit - Tout public</span>
-                        </div>
-                        <p class="event-description">
-                            Une journée dédiée à l'art urbain avec des performances live, 
-                            des ateliers de graffiti, des expositions et des concerts.
-                        </p>
-                        <div class="event-cta">
-                            <button class="event-btn">S'inscrire</button>
-                        </div>
+            <div class="single-event fade-in-scale">
+                <div class="event-visual">
+                    <div class="event-date-badge">
+                        <span class="event-month">Novembre</span>
+                        <span class="event-day">14 & 15</span>
+                        <span class="event-year">2025</span>
                     </div>
                 </div>
-
-                <!-- Événement 2 -->
-                <div class="event-card fade-in-scale stagger-delay-2">
-                    <div class="event-date">
-                        <span class="event-day">20</span>
-                        <span class="event-month">Jan 2025</span>
+                <div class="event-content">
+                    <h2 class="event-title">EXPOSITION</h2>
+                    <h3 class="event-subtitle">SALON DES ARTS ET TABLEAUX DES PRODUITS</h3>
+                    <div class="event-info">
+                        <i class="fas fa-recycle"></i>
+                        <span>Recyclage en Poudre de Bois</span>
                     </div>
-                    <div class="event-content">
-                        <h3 class="event-title">Formation Entrepreneuriat</h3>
-                        <div class="event-info">
-                            <i class="fas fa-clock"></i>
-                            <span>9h00 - 17h00</span>
-                        </div>
-                        <div class="event-info">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Salle Principale</span>
-                        </div>
-                        <div class="event-info">
-                            <i class="fas fa-tag"></i>
-                            <span>Formation certifiante</span>
-                        </div>
-                        <p class="event-description">
-                            Session intensive de 3 jours sur la création d'entreprise, 
-                            le business plan et le financement de projet.
-                        </p>
-                        <div class="event-cta">
-                            <button class="event-btn">S'inscrire</button>
-                        </div>
+                    <div class="event-info">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Les 14 & 15 Novembre 2025</span>
                     </div>
-                </div>
-
-                <!-- Événement 3 -->
-                <div class="event-card fade-in-scale stagger-delay-3">
-                    <div class="event-date">
-                        <span class="event-day">05</span>
-                        <span class="event-month">Fév 2025</span>
+                    <div class="event-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>14 Avenue René Boylesve, Paris 75016</span>
                     </div>
-                    <div class="event-content">
-                        <h3 class="event-title">Soirée Ciné-Club</h3>
-                        <div class="event-info">
-                            <i class="fas fa-clock"></i>
-                            <span>19h00 - 23h00</span>
-                        </div>
-                        <div class="event-info">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Salle de projection</span>
-                        </div>
-                        <div class="event-info">
-                            <i class="fas fa-tag"></i>
-                            <span>2000 FCFA</span>
-                        </div>
-                        <p class="event-description">
-                            Projection du film "Atlantiques" de Mati Diop suivie d'un débat 
-                            avec des professionnels du cinéma sénégalais.
-                        </p>
-                        <div class="event-cta">
-                            <button class="event-btn">S'inscrire</button>
-                        </div>
+                    <div class="event-info">
+                        <i class="fas fa-clock"></i>
+                        <span>Horaires: 10h00 - 19h00</span>
+                    </div>
+                    <p class="event-description">
+                        Une exposition unique mettant en lumière l'art du recyclage et la transformation 
+                        de la poudre de bois en œuvres d'art remarquables. Découvrez des tableaux innovants 
+                        et des créations artistiques éco-responsables.
+                    </p>
+                    <div class="event-cta">
+                        <button class="event-btn">Réserver ma place</button>
                     </div>
                 </div>
             </div>
@@ -1070,13 +1051,14 @@
             });
         }
 
-        // Script pour les boutons d'inscription aux événements
-        document.querySelectorAll('.event-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const eventTitle = this.closest('.event-card').querySelector('.event-title').textContent;
-                alert(`Merci de votre intérêt pour "${eventTitle}" ! Nous vous contacterons pour finaliser votre inscription.`);
+        // Script pour le bouton de réservation d'événement
+        const eventBtn = document.querySelector('.event-btn');
+        if(eventBtn) {
+            eventBtn.addEventListener('click', function() {
+                alert('Merci pour votre intérêt ! Vous serez redirigé vers le formulaire de réservation.');
+                // Ici vous pouvez ajouter la redirection vers un formulaire de réservation
             });
-        });
+        }
 
         // Script pour le carrousel slide
         const track = document.querySelector(".carousel-track");
