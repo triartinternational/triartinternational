@@ -291,6 +291,116 @@
             background: rgba(0,0,0,0.8);
         }
         
+        /* Événements à Venir */
+        .events {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #333;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .event-date {
+            background: #e74c3c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .event-day {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .event-month {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .event-content {
+            padding: 25px;
+        }
+
+        .event-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .event-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .event-info i {
+            color: #e74c3c;
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .event-description {
+            margin-top: 15px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .event-cta {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .event-btn {
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-weight: 500;
+        }
+
+        .event-btn:hover {
+            background: #e74c3c;
+        }
+
+        .no-events {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .no-events i {
+            font-size: 3rem;
+            color: #bdc3c7;
+            margin-bottom: 20px;
+        }
+        
         /* Équipements */
         .equipment-list {
             display: grid;
@@ -539,6 +649,10 @@
             .carousel-track img {
                 height: 250px;
             }
+            
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -556,7 +670,8 @@
                         <li class="fade-in stagger-delay-1"><a href="#accueil">Accueil</a></li>
                         <li class="fade-in stagger-delay-2"><a href="#apropos">À propos</a></li>
                         <li class="fade-in stagger-delay-3"><a href="#services">Services</a></li>
-                        <li class="fade-in stagger-delay-4"><a href="#equipements">Équipements</a></li>
+                        <li class="fade-in stagger-delay-4"><a href="#evenements">Événements</a></li>
+                        <li class="fade-in stagger-delay-5"><a href="#equipements">Équipements</a></li>
                         <li class="fade-in stagger-delay-5"><a href="#localisation">Localisation</a></li>
                         <li class="fade-in stagger-delay-5"><a href="#contact">Contact</a></li>
                     </ul>
@@ -653,6 +768,107 @@
                 <!-- Flèches -->
                 <button class="prev">&#10094;</button>
                 <button class="next">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Événements à Venir -->
+    <section id="evenements" class="events">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-in" style="color: white;">Événements à Venir</h2>
+            </div>
+
+            <div class="events-grid">
+                <!-- Événement 1 -->
+                <div class="event-card fade-in-scale stagger-delay-1">
+                    <div class="event-date">
+                        <span class="event-day">15</span>
+                        <span class="event-month">Déc 2024</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Festival des Arts Urbains</h3>
+                        <div class="event-info">
+                            <i class="fas fa-clock"></i>
+                            <span>14h00 - 22h00</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jardin Artistique Tri-Art</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-tag"></i>
+                            <span>Gratuit - Tout public</span>
+                        </div>
+                        <p class="event-description">
+                            Une journée dédiée à l'art urbain avec des performances live, 
+                            des ateliers de graffiti, des expositions et des concerts.
+                        </p>
+                        <div class="event-cta">
+                            <button class="event-btn">S'inscrire</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Événement 2 -->
+                <div class="event-card fade-in-scale stagger-delay-2">
+                    <div class="event-date">
+                        <span class="event-day">20</span>
+                        <span class="event-month">Jan 2025</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Formation Entrepreneuriat</h3>
+                        <div class="event-info">
+                            <i class="fas fa-clock"></i>
+                            <span>9h00 - 17h00</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Salle Principale</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-tag"></i>
+                            <span>Formation certifiante</span>
+                        </div>
+                        <p class="event-description">
+                            Session intensive de 3 jours sur la création d'entreprise, 
+                            le business plan et le financement de projet.
+                        </p>
+                        <div class="event-cta">
+                            <button class="event-btn">S'inscrire</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Événement 3 -->
+                <div class="event-card fade-in-scale stagger-delay-3">
+                    <div class="event-date">
+                        <span class="event-day">05</span>
+                        <span class="event-month">Fév 2025</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Soirée Ciné-Club</h3>
+                        <div class="event-info">
+                            <i class="fas fa-clock"></i>
+                            <span>19h00 - 23h00</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Salle de projection</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-tag"></i>
+                            <span>2000 FCFA</span>
+                        </div>
+                        <p class="event-description">
+                            Projection du film "Atlantiques" de Mati Diop suivie d'un débat 
+                            avec des professionnels du cinéma sénégalais.
+                        </p>
+                        <div class="event-cta">
+                            <button class="event-btn">S'inscrire</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -782,112 +998,4 @@
                     <ul>
                         <li><a href="#accueil">Accueil</a></li>
                         <li><a href="#apropos">À propos</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#equipements">Équipements</a></li>
-                        <li><a href="#localisation">Localisation</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column fade-in-right">
-                    <h3>Nos services</h3>
-                    <ul>
-                        <li><a href="#">Formations professionnelles</a></li>
-                        <li><a href="#">Séminaires d'entreprise</a></li>
-                        <li><a href="#">Événements culturels</a></li>
-                        <li><a href="#">Location de salle</a></li>
-                        <li><a href="#">Organisation d'événements</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright fade-in">
-                <p>&copy; 2023 Centre Multifonctionnel Tri-Art. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Script pour les animations fade in au défilement
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observer tous les éléments avec les classes d'animation
-        document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Script pour le défilement fluide vers les ancres
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Script pour le formulaire de contact (simulation d'envoi)
-        const contactForm = document.querySelector('.contact-form form');
-        if(contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Merci pour votre message! Nous vous contacterons bientôt.');
-                this.reset();
-            });
-        }
-
-        // Script pour le carrousel slide
-        const track = document.querySelector(".carousel-track");
-        if (track) {
-            const slides = Array.from(track.children);
-            const nextBtn = document.querySelector(".next");
-            const prevBtn = document.querySelector(".prev");
-            let currentIndex = 0;
-
-            // Fonction pour afficher la slide
-            function updateSlide(index) {
-                track.style.transform = `translateX(-${index * 100}%)`;
-            }
-
-            // Bouton suivant
-            if(nextBtn){
-                nextBtn.addEventListener("click", () => {
-                    currentIndex = (currentIndex + 1) % slides.length;
-                    updateSlide(currentIndex);
-                });
-            }
-
-            // Bouton précédent
-            if(prevBtn){
-                prevBtn.addEventListener("click", () => {
-                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                    updateSlide(currentIndex);
-                });
-            }
-
-            // Défilement auto toutes les 5s
-            setInterval(() => {
-                currentIndex = (currentIndex + 1) % slides.length;
-                updateSlide(currentIndex);
-            }, 5000);
-        }
-    </script>
-</body>
-</html>
+                        <li><a href="#services">Services</
