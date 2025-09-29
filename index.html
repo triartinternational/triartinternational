@@ -193,9 +193,9 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 1080px;
-  aspect-ratio: 4/3;  /* garde le format 1080x810 */
-  margin: 0 auto 40px; /* même marge que la galerie */
+  max-width: 1200px;   /* même limite que .container */
+  aspect-ratio: 4/3;   /* conserve format 1080/810 */
+  margin: 0 auto 40px; /* même espace que la galerie */
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
@@ -208,10 +208,11 @@
 .carousel-track img {
   width: 100%;
   flex-shrink: 0;
-  border-radius: 10px; /* comme la galerie */
-  object-fit: cover;   /* évite déformation */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* comme la galerie */
+  border-radius: 10px;       /* comme la galerie */
+  object-fit: cover;         /* évite la déformation */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
+
 
 /* Flèches */
 .prev, .next {
