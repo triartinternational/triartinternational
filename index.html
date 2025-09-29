@@ -26,6 +26,57 @@
             padding: 0 15px;
         }
         
+        /* Animations Fade In */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .fade-in-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in-scale.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .stagger-delay-1 { transition-delay: 0.1s; }
+        .stagger-delay-2 { transition-delay: 0.2s; }
+        .stagger-delay-3 { transition-delay: 0.3s; }
+        .stagger-delay-4 { transition-delay: 0.4s; }
+        .stagger-delay-5 { transition-delay: 0.5s; }
+        
         /* En-tête */
         header {
             background-color: #2c3e50;
@@ -49,7 +100,7 @@
         }
         
         .logo img {
-            max-height: 100px; /* Taille réduite du logo */
+            max-height: 80px;
             width: auto;
         }
         
@@ -100,11 +151,12 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
         
         .btn:hover {
             background-color: #c0392b;
+            transform: translateY(-3px);
         }
         
         /* Sections */
@@ -145,7 +197,7 @@
         
         .about-text {
             flex: 1;
-            size: ;
+            font-size: 1.1rem;
         }
         
         .about-image {
@@ -159,84 +211,85 @@
             width: 100%;
             height: auto;
             display: block;
-            font-size: 50px;
         }
         
-       /* Bloc texte services */
-.services-text {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    margin-bottom: 40px;
-    text-align: center;
-    font-size: 1.1rem;
-}
+        /* Services */
+        .services-text {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
 
-/* Galerie 3 images */
-.services-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 40px;
-}
+        /* Galerie 3 images */
+        .services-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
 
-.services-gallery img {
-    width: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
+        .services-gallery img {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
 
-//* Carrousel Slide (style galerie) */
-.services-carousel {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  max-width: 400px;   /* ≈ largeur d’une image de la galerie */
-  aspect-ratio: 4/3;  /* garde format 1080/810 */
-  margin: 0 auto 40px; /* centré + même espace que la galerie */
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
+        .services-gallery img:hover {
+            transform: scale(1.05);
+        }
 
+        /* Carrousel Slide */
+        .services-carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
 
-.carousel-track {
-  display: flex;
-  transition: transform 0.8s ease;
-}
+        .carousel-track {
+            display: flex;
+            transition: transform 0.8s ease;
+        }
 
-.carousel-track img {
-  width: 100%;
-  flex-shrink: 0;
-  border-radius: 10px;       /* comme la galerie */
-  object-fit: cover;         /* évite la déformation */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
+        .carousel-track img {
+            width: 100%;
+            flex-shrink: 0;
+            height: 400px;
+            object-fit: cover;
+        }
 
+        /* Flèches */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+            z-index: 10;
+            transition: background 0.3s ease;
+        }
 
-/* Flèches */
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: #fff;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 50%;
-}
+        .prev { left: 10px; }
+        .next { right: 10px; }
 
-.prev { left: 10px; }
-.next { right: 10px; }
-
-.prev:hover, .next:hover {
-  background: rgba(0,0,0,0.8);
-}
-
-
-
+        .prev:hover, .next:hover {
+            background: rgba(0,0,0,0.8);
+        }
         
         /* Équipements */
         .equipment-list {
@@ -251,6 +304,12 @@
             border-radius: 5px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .equipment-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
         
         .equipment-item i {
@@ -313,6 +372,7 @@
             font-size: 1.5rem;
             color: #e74c3c;
             margin-right: 15px;
+            min-width: 25px;
         }
         
         .contact-form {
@@ -339,6 +399,14 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #e74c3c;
+            box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+            outline: none;
         }
         
         .form-group textarea {
@@ -411,11 +479,12 @@
             border-radius: 50%;
             color: white;
             text-decoration: none;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
         
         .social-links a:hover {
             background-color: #e74c3c;
+            transform: translateY(-3px);
         }
         
         .copyright {
@@ -434,12 +503,17 @@
             }
             
             .logo img {
-                max-height: 50px; /* Taille encore plus petite sur mobile */
+                max-height: 60px;
             }
             
             nav ul {
                 margin-top: 20px;
                 justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
             }
             
             .about-content {
@@ -453,6 +527,18 @@
             .hero p {
                 font-size: 1rem;
             }
+            
+            .services-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-carousel {
+                max-width: 100%;
+            }
+            
+            .carousel-track img {
+                height: 250px;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -462,17 +548,17 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">
+                <div class="logo fade-in-left">
                     <img src="logo triart.png" alt="Logo Centre Tri-Art">
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#apropos">À propos</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#equipements">Équipements</a></li>
-                        <li><a href="#localisation">Localisation</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li class="fade-in stagger-delay-1"><a href="#accueil">Accueil</a></li>
+                        <li class="fade-in stagger-delay-2"><a href="#apropos">À propos</a></li>
+                        <li class="fade-in stagger-delay-3"><a href="#services">Services</a></li>
+                        <li class="fade-in stagger-delay-4"><a href="#equipements">Équipements</a></li>
+                        <li class="fade-in stagger-delay-5"><a href="#localisation">Localisation</a></li>
+                        <li class="fade-in stagger-delay-5"><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -482,9 +568,9 @@
     <!-- Bannière principale -->
     <section id="accueil" class="hero">
         <div class="container">
-            <h2>Centre Multifonctionnel Tri-Art</h2>
-            <p>Un espace moderne et polyvalent pour vos formations, séminaires et événements culturels à Rufisque Est</p>
-            <a href="#contact" class="btn">Nous contacter</a>
+            <h2 class="fade-in">Centre Multifonctionnel Tri-Art</h2>
+            <p class="fade-in stagger-delay-1">Un espace moderne et polyvalent pour vos formations, séminaires et événements culturels à Rufisque Est</p>
+            <a href="#contact" class="btn fade-in stagger-delay-2">Nous contacter</a>
         </div>
     </section>
 
@@ -492,116 +578,113 @@
     <section id="apropos" class="about">
         <div class="container">
             <div class="section-title">
-                <h2>À propos de nous</h2>
+                <h2 class="fade-in">À propos de nous</h2>
             </div>
             <div class="about-content">
-                <div class="about-text">
-                     <p>
-                    Situé à <strong>Rufisque Est</strong>, au quartier Arafat 4, le <strong>Centre Multifonctionnel Tri-Art</strong> est un lieu moderne et inclusif 
-                    qui offre à la communauté un cadre idéal pour apprendre, créer et partager.
-                </p>
-                <p>
-                    Conçu comme un <em>laboratoire de talents</em>, Tri-Art accompagne jeunes, femmes et professionnels dans un esprit de 
-                    <strong>partage</strong>, de <strong>transmission</strong> et d’<strong>inclusion</strong>. 
-                    Sa mission repose sur trois piliers : <strong>formation</strong>, <strong>insertion</strong> et <strong>formalisation</strong>.
-                </p>
-                <p>
-                    Le centre dispose d’une salle principale de <strong>250 places assises</strong>, équipée en sonorisation et projection, 
-                    idéale pour séminaires, conférences, projections et spectacles. 
-                    Il comprend aussi des <strong>salles d’ateliers</strong>, un <strong>espace numérique</strong> et un <strong>jardin artistique</strong>.
-                </p>
-                <p>
-                    Nos activités couvrent plusieurs domaines : culture (théâtre, ciné-club, expositions, défilés de mode), 
-                    formations pratiques en agro-alimentaire et recyclage créatif, ainsi que l’accompagnement des porteurs de projets pour leur insertion professionnelle.
-                </p>
-                <p>
-                    Grâce à sa vision inclusive, Tri-Art est un <strong>espace d’opportunités</strong> où chacun peut développer ses compétences, exprimer son talent 
-                    et contribuer à bâtir une société plus créative et solidaire.
-                </p>
+                <div class="about-text fade-in-left">
+                    <p>
+                        Situé à <strong>Rufisque Est</strong>, au quartier Arafat 4, le <strong>Centre Multifonctionnel Tri-Art</strong> est un lieu moderne et inclusif 
+                        qui offre à la communauté un cadre idéal pour apprendre, créer et partager.
+                    </p>
+                    <p>
+                        Conçu comme un <em>laboratoire de talents</em>, Tri-Art accompagne jeunes, femmes et professionnels dans un esprit de 
+                        <strong>partage</strong>, de <strong>transmission</strong> et d'<strong>inclusion</strong>. 
+                        Sa mission repose sur trois piliers : <strong>formation</strong>, <strong>insertion</strong> et <strong>formalisation</strong>.
+                    </p>
+                    <p>
+                        Le centre dispose d'une salle principale de <strong>250 places assises</strong>, équipée en sonorisation et projection, 
+                        idéale pour séminaires, conférences, projections et spectacles. 
+                        Il comprend aussi des <strong>salles d'ateliers</strong>, un <strong>espace numérique</strong> et un <strong>jardin artistique</strong>.
+                    </p>
+                    <p>
+                        Nos activités couvrent plusieurs domaines : culture (théâtre, ciné-club, expositions, défilés de mode), 
+                        formations pratiques en agro-alimentaire et recyclage créatif, ainsi que l'accompagnement des porteurs de projets pour leur insertion professionnelle.
+                    </p>
+                    <p>
+                        Grâce à sa vision inclusive, Tri-Art est un <strong>espace d'opportunités</strong> où chacun peut développer ses compétences, exprimer son talent 
+                        et contribuer à bâtir une société plus créative et solidaire.
+                    </p>
                 </div>
-                <div class="about-image">
+                <div class="about-image fade-in-right">
                     <img src="imagetriart.jpg" alt="Centre Tri-Art">
                 </div>
             </div>
         </div>
     </section>
 
-   <!-- Services -->
-<section id="services" class="services">
-    <div class="container">
-        <div class="section-title">
-            <h2>Nos Services</h2>
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-in">Nos Services</h2>
+            </div>
+
+            <!-- Bloc Texte -->
+            <div class="services-text fade-in">
+                <p>
+                    Le <strong>Centre Multifonctionnel Tri-Art</strong> met à votre disposition 
+                    une large gamme de services : formations, séminaires, ateliers créatifs et événements culturels.  
+                    Nous offrons un cadre moderne et inclusif pour apprendre, partager et valoriser les talents.
+                </p>
+            </div>
+
+            <!-- Galerie 3 images -->
+            <div class="services-gallery">
+                <img src="service1.jpg" alt="Formations professionnelles" class="fade-in-scale stagger-delay-1">
+                <img src="service2.jpg" alt="Événements culturels" class="fade-in-scale stagger-delay-2">
+                <img src="service3.jpg" alt="Séminaires d'entreprise" class="fade-in-scale stagger-delay-3">
+            </div>
+
+            <!-- Carrousel Slide -->
+            <div class="services-carousel fade-in">
+                <div class="carousel-track">
+                    <img src="carrousel1.jpg" alt="Atelier créatif">
+                    <img src="carrousel2.jpg" alt="Salle de formation">
+                    <img src="carrousel3.jpg" alt="Événement culturel">
+                    <img src="carrousel4.jpg" alt="Séminaire">
+                    <img src="carrousel5.jpg" alt="Exposition">
+                    <img src="carrousel6.jpg" alt="Spectacle">
+                    <img src="carrousel7.jpg" alt="Atelier pratique">
+                    <img src="carrousel8.jpg" alt="Conférence">
+                    <img src="carrousel9.jpg" alt="Défilé de mode">
+                    <img src="carrousel10.jpg" alt="Ciné-club">
+                </div>
+                
+                <!-- Flèches -->
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
         </div>
-
-        <!-- Bloc Texte -->
-        <div class="services-text">
-            <p>
-                Le <strong>Centre Multifonctionnel Tri-Art</strong> met à votre disposition 
-                une large gamme de services : formations, séminaires, ateliers créatifs et événements culturels.  
-                Nous offrons un cadre moderne et inclusif pour apprendre, partager et valoriser les talents.
-            </p>
-        </div>
-
-        <!-- Galerie 3 images -->
-        <div class="services-gallery">
-            <img src="service1.jpg" alt="Service 1">
-            <img src="service2.jpg" alt="Service 2">
-            <img src="service3.jpg" alt="Service 3">
-        </div>
-
-<!-- Carrousel Slide -->
-<div class="services-carousel">
-  <div class="carousel-track">
-    <img src="carrousel1.jpg" alt="Image 1">
-    <img src="carrousel2.jpg" alt="Image 2">
-    <img src="carrousel3.jpg" alt="Image 3">
-    <img src="carrousel4.jpg" alt="Image 4">
-    <img src="carrousel5.jpg" alt="Image 5">
-    <img src="carrousel6.jpg" alt="Image 6">
-    <img src="carrousel7.jpg" alt="Image 7">
-    <img src="carrousel8.jpg" alt="Image 8">
-    <img src="carrousel9.jpg" alt="Image 9">
-    <img src="carrousel10.jpg" alt="Image 10">
-  </div>
-  
-  <!-- Flèches -->
-  <button class="prev">&#10094;</button>
-  <button class="next">&#10095;</button>
-</div>
-
-
-    </div>
-</section>
-
+    </section>
 
     <!-- Équipements -->
     <section id="equipements" class="equipment">
         <div class="container">
             <div class="section-title">
-                <h2>Nos Équipements</h2>
+                <h2 class="fade-in">Nos Équipements</h2>
             </div>
             <div class="equipment-list">
-                <div class="equipment-item">
+                <div class="equipment-item fade-in-scale stagger-delay-1">
                     <i class="fas fa-tv"></i>
                     <h3>Écran géant</h3>
                 </div>
-                <div class="equipment-item">
+                <div class="equipment-item fade-in-scale stagger-delay-2">
                     <i class="fas fa-video"></i>
                     <h3>Vidéo projecteur</h3>
                 </div>
-                <div class="equipment-item">
+                <div class="equipment-item fade-in-scale stagger-delay-3">
                     <i class="fas fa-film"></i>
                     <h3>Télé-vidéo</h3>
                 </div>
-                <div class="equipment-item">
+                <div class="equipment-item fade-in-scale stagger-delay-4">
                     <i class="fas fa-camera"></i>
                     <h3>Caméra</h3>
                 </div>
-                <div class="equipment-item">
+                <div class="equipment-item fade-in-scale stagger-delay-5">
                     <i class="fas fa-volume-up"></i>
                     <h3>Régie son et lumière</h3>
                 </div>
-                <div class="equipment-item">
+                <div class="equipment-item fade-in-scale stagger-delay-5">
                     <i class="fas fa-chair"></i>
                     <h3>250 places assises</h3>
                 </div>
@@ -613,15 +696,15 @@
     <section id="localisation" class="location">
         <div class="container">
             <div class="section-title">
-                <h2>Localisation</h2>
+                <h2 class="fade-in">Localisation</h2>
             </div>
             <div class="location-content">
-                <div class="address">
+                <div class="address fade-in">
                     <h3>Notre adresse</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Cité Mademba Ngom, près de la SENICO, quartier Arafat 4</p>
                     <p>Commune de Rufisque Est, sur l'autoroute à péage vers Bargny, Diamniadio et Yéne</p>
                 </div>
-                <div class="map">
+                <div class="map fade-in stagger-delay-1">
                     <!-- Intégration d'une carte Google Maps -->
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.123456789012!2d-17.276234!3d14.716537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDQyJzU5LjUiTiAxN8KwMTYnMzQuNCJX!5e0!3m2!1sfr!2ssn!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
@@ -633,10 +716,10 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contactez-nous</h2>
+                <h2 class="fade-in">Contactez-nous</h2>
             </div>
             <div class="contact-content">
-                <div class="contact-info">
+                <div class="contact-info fade-in-left">
                     <h3>Informations de contact</h3>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
@@ -655,26 +738,26 @@
                         <p>Lundi - Vendredi: 8h00 - 18h00<br>Samedi: 9h00 - 13h00</p>
                     </div>
                 </div>
-                <div class="contact-form">
+                <div class="contact-form fade-in-right">
                     <h3>Envoyez-nous un message</h3>
                     <form>
                         <div class="form-group">
                             <label for="name">Nom complet</label>
-                            <input type="text" id="name" required>
+                            <input type="text" id="name" required class="fade-in-scale stagger-delay-1">
                         </div>
                         <div class="form-group">
                             <label for="email">Adresse email</label>
-                            <input type="email" id="email" required>
+                            <input type="email" id="email" required class="fade-in-scale stagger-delay-2">
                         </div>
                         <div class="form-group">
                             <label for="subject">Sujet</label>
-                            <input type="text" id="subject" required>
+                            <input type="text" id="subject" required class="fade-in-scale stagger-delay-3">
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" required></textarea>
+                            <textarea id="message" required class="fade-in-scale stagger-delay-4"></textarea>
                         </div>
-                        <button type="submit" class="btn">Envoyer le message</button>
+                        <button type="submit" class="btn fade-in-scale stagger-delay-5">Envoyer le message</button>
                     </form>
                 </div>
             </div>
@@ -685,16 +768,16 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
+                <div class="footer-column fade-in-left">
                     <h3>Centre Tri-Art</h3>
                     <p>Le Centre Multifonctionnel Tri-Art est un espace moderne et polyvalent situé à Rufisque Est, dédié aux formations, séminaires et événements culturels.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="fade-in-scale stagger-delay-1"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="fade-in-scale stagger-delay-2"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="fade-in-scale stagger-delay-3"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="footer-column">
+                <div class="footer-column fade-in">
                     <h3>Liens rapides</h3>
                     <ul>
                         <li><a href="#accueil">Accueil</a></li>
@@ -705,7 +788,7 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
+                <div class="footer-column fade-in-right">
                     <h3>Nos services</h3>
                     <ul>
                         <li><a href="#">Formations professionnelles</a></li>
@@ -716,77 +799,95 @@
                     </ul>
                 </div>
             </div>
-            <div class="copyright">
+            <div class="copyright fade-in">
                 <p>&copy; 2023 Centre Multifonctionnel Tri-Art. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
-  <script>
-    // Script pour le défilement fluide vers les ancres
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if(targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
+    <script>
+        // Script pour les animations fade in au défilement
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observer tous les éléments avec les classes d'animation
+        document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Script pour le défilement fluide vers les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Script pour le formulaire de contact (simulation d'envoi)
+        const contactForm = document.querySelector('.contact-form form');
+        if(contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Merci pour votre message! Nous vous contacterons bientôt.');
+                this.reset();
+            });
+        }
+
+        // Script pour le carrousel slide
+        const track = document.querySelector(".carousel-track");
+        if (track) {
+            const slides = Array.from(track.children);
+            const nextBtn = document.querySelector(".next");
+            const prevBtn = document.querySelector(".prev");
+            let currentIndex = 0;
+
+            // Fonction pour afficher la slide
+            function updateSlide(index) {
+                track.style.transform = `translateX(-${index * 100}%)`;
+            }
+
+            // Bouton suivant
+            if(nextBtn){
+                nextBtn.addEventListener("click", () => {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    updateSlide(currentIndex);
                 });
             }
-        });
-    });
-    
-    // Script pour le formulaire de contact (simulation d'envoi)
-    const contactForm = document.querySelector('.contact-form form');
-    if(contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Merci pour votre message! Nous vous contacterons bientôt.');
-            this.reset();
-        });
-    }
 
-    // Script pour le carrousel slide
-    const track = document.querySelector(".carousel-track");
-    if (track) {
-        const slides = Array.from(track.children);
-        const nextBtn = document.querySelector(".next");
-        const prevBtn = document.querySelector(".prev");
-        let currentIndex = 0;
+            // Bouton précédent
+            if(prevBtn){
+                prevBtn.addEventListener("click", () => {
+                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    updateSlide(currentIndex);
+                });
+            }
 
-        // Fonction pour afficher la slide
-        function updateSlide(index) {
-            track.style.transform = `translateX(-${index * 100}%)`;
-        }
-
-        // Bouton suivant
-        if(nextBtn){
-            nextBtn.addEventListener("click", () => {
+            // Défilement auto toutes les 5s
+            setInterval(() => {
                 currentIndex = (currentIndex + 1) % slides.length;
                 updateSlide(currentIndex);
-            });
+            }, 5000);
         }
-
-        // Bouton précédent
-        if(prevBtn){
-            prevBtn.addEventListener("click", () => {
-                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                updateSlide(currentIndex);
-            });
-        }
-
-        // Défilement auto toutes les 5s
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateSlide(currentIndex);
-        }, 5000);
-    }
-</script>
-
+    </script>
 </body>
 </html>
