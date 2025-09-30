@@ -292,10 +292,10 @@
         }
         
         /* Événements à Venir - Version Single Event */
-     .events {
-    background:  center/cover;
-    color: white;
-}
+        .events {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+        }
 
         .single-event {
             display: flex;
@@ -311,21 +311,25 @@
         .event-visual {
             flex: 1;
             position: relative;
-            min-height: 400px;
+            min-height: 500px;
             background: linear-gradient(45deg, #e74c3c, #c0392b);
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             color: white;
             padding: 30px;
+            gap: 30px;
         }
 
         .event-date-badge {
             text-align: center;
-            background: url('event1.jpeg')
+            background: rgba(255,255,255,0.2);
             padding: 30px;
             border-radius: 15px;
             backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 250px;
         }
 
         .event-month {
@@ -348,6 +352,20 @@
             display: block;
             margin-top: 10px;
             opacity: 0.9;
+        }
+
+        .event-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .event-image img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .event-content {
@@ -678,7 +696,7 @@
             }
             
             .event-visual {
-                min-height: 250px;
+                min-height: 400px;
             }
             
             .event-title {
@@ -820,6 +838,9 @@
                         <span class="event-month">Novembre</span>
                         <span class="event-day">14 & 15</span>
                         <span class="event-year">2025</span>
+                    </div>
+                    <div class="event-image">
+                        <img src="event1.jpeg" alt="Exposition Recyclage Poudre de Bois">
                     </div>
                 </div>
                 <div class="event-content">
