@@ -406,10 +406,16 @@
             background: rgba(0,0,0,0.8);
         }
         
-        /* Événements à Venir - Version Single Event */
+        /* Événements à Venir */
         .events {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
+        }
+
+        .events-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
         }
 
         .single-event {
@@ -1078,46 +1084,94 @@
                 <h2 class="fade-in" style="color: white;">Événements à Venir</h2>
             </div>
 
-            <!-- Premier événement -->
-            <div class="single-event fade-in-scale">
-                <div class="event-visual">
-                    <div class="event-date-badge">
-                        <span class="event-month">Novembre</span>
-                        <span class="event-day">14 & 15</span>
-                        <span class="event-year">2025</span>
+            <div class="events-container">
+                <!-- Premier événement -->
+                <div class="single-event fade-in-scale">
+                    <div class="event-visual">
+                        <div class="event-date-badge">
+                            <span class="event-month">Novembre</span>
+                            <span class="event-day">14 & 15</span>
+                            <span class="event-year">2025</span>
+                        </div>
+                        <div class="event-image">
+                            <img src="event1.jpeg" alt="Exposition Recyclage Poudre de Bois">
+                        </div>
                     </div>
-                    <div class="event-image">
-                        <img src="event1.jpeg" alt="Exposition Recyclage Poudre de Bois">
+                    <div class="event-content">
+                        <h2 class="event-title">EXPOSITION</h2>
+                        <h3 class="event-subtitle">SALON DES ARTS ET TABLEAUX DES PRODUITS</h3>
+                        <div class="event-info">
+                            <i class="fas fa-recycle"></i>
+                            <span>Recyclage en Poudre de Bois</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Les 14 & 15 Novembre 2025</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>14 Avenue René Boylesve, Paris 75016</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-clock"></i>
+                            <span>Horaires: 10h00 - 19h00</span>
+                        </div>
+                        <p class="event-description">
+                            Une exposition unique mettant en lumière l'art du recyclage et la transformation 
+                            de la poudre de bois en œuvres d'art remarquables. Découvrez des tableaux innovants 
+                            et des créations artistiques éco-responsables.
+                        </p>
+                        <div class="event-cta">
+                            <a href="https://wa.me/221776332771?text=Bonjour%2C%20je%20souhaiterais%20r%C3%A9server%20ma%20place%20pour%20votre%20%C3%A9v%C3%A9nement.%20Pouvez-vous%20m%E2%80%99envoyer%20plus%20de%20d%C3%A9tails%20s%E2%80%99il%20vous%20pla%C3%AEt%20%3F" 
+                            target="_blank" class="btn-reserver">
+                            <button class="event-btn">Réserver ma place</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="event-content">
-                    <h2 class="event-title">EXPOSITION</h2>
-                    <h3 class="event-subtitle">SALON DES ARTS ET TABLEAUX DES PRODUITS</h3>
-                    <div class="event-info">
-                        <i class="fas fa-recycle"></i>
-                        <span>Recyclage en Poudre de Bois</span>
+
+                <!-- Deuxième événement -->
+                <div class="single-event fade-in-scale">
+                    <div class="event-visual">
+                        <div class="event-date-badge">
+                            <span class="event-month">Décembre</span>
+                            <span class="event-day">05</span>
+                            <span class="event-year">2025</span>
+                        </div>
+                        <div class="event-image">
+                            <img src="events2.jpeg" alt="Festival d'Art Contemporain">
+                        </div>
                     </div>
-                    <div class="event-info">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Les 14 & 15 Novembre 2025</span>
-                    </div>
-                    <div class="event-info">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>14 Avenue René Boylesve, Paris 75016</span>
-                    </div>
-                    <div class="event-info">
-                        <i class="fas fa-clock"></i>
-                        <span>Horaires: 10h00 - 19h00</span>
-                    </div>
-                    <p class="event-description">
-                        Une exposition unique mettant en lumière l'art du recyclage et la transformation 
-                        de la poudre de bois en œuvres d'art remarquables. Découvrez des tableaux innovants 
-                        et des créations artistiques éco-responsables.
-                    </p>
-                    <div class="event-cta">
-                       <a href="https://wa.me/221776332771?text=Bonjour%2C%20je%20souhaiterais%20r%C3%A9server%20ma%20place%20pour%20votre%20%C3%A9v%C3%A9nement.%20Pouvez-vous%20m%E2%80%99envoyer%20plus%20de%20d%C3%A9tails%20s%E2%80%99il%20vous%20pla%C3%AEt%20%3F" 
-   target="_blank" class="btn-reserver">
-   <button class="event-btn">Réserver ma place</button></a>
+                    <div class="event-content">
+                        <h2 class="event-title">FESTIVAL</h2>
+                        <h3 class="event-subtitle">ART CONTEMPORAIN & INNOVATION</h3>
+                        <div class="event-info">
+                            <i class="fas fa-palette"></i>
+                            <span>Art Contemporain & Digital</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Le 05 Décembre 2025</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Centre Tri-Art, Rufisque Est</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-clock"></i>
+                            <span>Horaires: 09h00 - 22h00</span>
+                        </div>
+                        <p class="event-description">
+                            Un festival unique mêlant art contemporain et nouvelles technologies. 
+                            Découvrez des installations interactives, des performances live et des 
+                            œuvres d'art digital qui repoussent les limites de la créativité.
+                        </p>
+                        <div class="event-cta">
+                            <a href="https://wa.me/221776332771?text=Bonjour%2C%20je%20souhaiterais%20r%C3%A9server%20ma%20place%20pour%20le%20festival%20d'art%20contemporain.%20Pouvez-vous%20m%E2%80%99envoyer%20plus%20de%20d%C3%A9tails%20s%E2%80%99il%20vous%20pla%C3%AEt%20%3F" 
+                            target="_blank" class="btn-reserver">
+                            <button class="event-btn">Réserver ma place</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
