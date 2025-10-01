@@ -760,6 +760,82 @@
             font-size: 0.9rem;
             color: #ddd;
         }
+
+        /* Styles pour les notifications */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-width: 300px;
+            max-width: 500px;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .notification.success {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .notification.error {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .notification-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .notification-close {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 5px;
+            margin-left: 10px;
+        }
+
+        .notification-close:hover {
+            opacity: 0.8;
+        }
+
+        /* Styles pour les messages d'erreur */
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        /* Animation */
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Style pour le bouton de chargement */
+        .btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .fa-spin {
+            animation: fa-spin 1s infinite linear;
+        }
+
+        @keyframes fa-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
         
         /* Responsive */
         @media (max-width: 768px) {
@@ -822,89 +898,9 @@
             .event-subtitle {
                 font-size: 1.2rem;
             }
-          /* Styles pour les notifications */
-.notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 15px 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-width: 300px;
-    max-width: 500px;
-    animation: slideIn 0.3s ease-out;
-}
-
-.notification.success {
-    background: #4CAF50;
-    color: white;
-}
-
-.notification.error {
-    background: #e74c3c;
-    color: white;
-}
-
-.notification-content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 1;
-}
-
-.notification-close {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 5px;
-    margin-left: 10px;
-}
-
-.notification-close:hover {
-    opacity: 0.8;
-}
-
-/* Styles pour les messages d'erreur */
-.error-message {
-    color: #e74c3c;
-    font-size: 0.85rem;
-    margin-top: 5px;
-    font-weight: 500;
-}
-
-/* Animation */
-@keyframes slideIn {
-    from { transform: translateX(100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-/* Style pour le bouton de chargement */
-.btn:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-}
-
-.fa-spin {
-    animation: fa-spin 1s infinite linear;
-}
-
-@keyframes fa-spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-  <!-- EmailJS SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script src="email.js" defer></script>
 </head>
 <body>
   <!-- En-tête -->
@@ -1006,8 +1002,7 @@
       </div>
     </section>
 
-    <!-- Ici suivent Services, Événements, Équipements, Localisation, Contact -->
-      <!-- Services -->
+    <!-- Services -->
     <section id="services" class="services">
         <div class="container">
             <div class="section-title">
@@ -1076,13 +1071,14 @@
         </div>
     </section>
 
-    <!-- Événements à Venir - Version Single Event -->
+    <!-- Événements à Venir -->
     <section id="evenements" class="events">
         <div class="container">
             <div class="section-title">
-                <h2 class="fade-in" style="color: white;">Événement à Venir</h2>
+                <h2 class="fade-in" style="color: white;">Événements à Venir</h2>
             </div>
 
+            <!-- Premier événement -->
             <div class="single-event fade-in-scale">
                 <div class="event-visual">
                     <div class="event-date-badge">
@@ -1092,46 +1088,6 @@
                     </div>
                     <div class="event-image">
                         <img src="event1.jpeg" alt="Exposition Recyclage Poudre de Bois">
-                    </div>
-                </div>
-                <div class="event-content">
-                    <h2 class="event-title">EXPOSITION</h2>
-                    <h3 class="event-subtitle">SALON DES ARTS ET TABLEAUX DES PRODUITS</h3>
-                    <div class="event-info">
-                        <i class="fas fa-recycle"></i>
-                        <span>Recyclage en Poudre de Bois</span>
-                    </div>
-                    <div class="event-info">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Les 14 & 15 Novembre 2025</span>
-                    </div>
-                    <div class="event-info">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>14 Avenue René Boylesve, Paris 75016</span>
-                    </div>
-                    <div class="event-info">
-                        <i class="fas fa-clock"></i>
-                        <span>Horaires: 10h00 - 19h00</span>
-                    </div>
-                    <p class="event-description">
-                        Une exposition unique mettant en lumière l'art du recyclage et la transformation 
-                        de la poudre de bois en œuvres d'art remarquables. Découvrez des tableaux innovants 
-                        et des créations artistiques éco-responsables.
-                    </p>
-                    <div class="event-cta">
-                       <a href="https://wa.me/221776332771?text=Bonjour%2C%20je%20souhaiterais%20r%C3%A9server%20ma%20place%20pour%20votre%20%C3%A9v%C3%A9nement.%20Pouvez-vous%20m%E2%80%99envoyer%20plus%20de%20d%C3%A9tails%20s%E2%80%99il%20vous%20pla%C3%AEt%20%3F" 
-   target="_blank" class="btn-reserver">
-   <button class="event-btn">Réserver ma place</button></a>
-                    </div>
-                     <div class="single-event fade-in-scale">
-                <div class="event-visual">
-                    <div class="event-date-badge">
-                        <span class="event-month">Novembre</span>
-                        <span class="event-day">14 & 15</span>
-                        <span class="event-year">2025</span>
-                    </div>
-                    <div class="event-image">
-                        <img src="events2.jpeg" alt="Exposition Recyclage Poudre de Bois">
                     </div>
                 </div>
                 <div class="event-content">
@@ -1224,57 +1180,56 @@
     </section>
 
     <!-- Contact -->
-   <!-- Contact -->
-<section id="contact" class="contact">
-    <div class="container">
-        <div class="section-title">
-            <h2 class="fade-in">Contactez-nous</h2>
-        </div>
-        <div class="contact-content">
-            <div class="contact-info fade-in-left">
-                <h3>Informations de contact</h3>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Cité Mademba Ngom, près de la SENICO<br>Quartier Arafat 4, Commune de Rufisque Est</p>
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-in">Contactez-nous</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info fade-in-left">
+                    <h3>Informations de contact</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Cité Mademba Ngom, près de la SENICO<br>Quartier Arafat 4, Commune de Rufisque Est</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+221 77 633 27 71</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>triarts2023@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Lundi - Vendredi: 8h00 - 18h00<br>Samedi: 9h00 - 13h00</p>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <p>+221 77 633 27 71</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>triarts2023@gmail.com</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-clock"></i>
-                    <p>Lundi - Vendredi: 8h00 - 18h00<br>Samedi: 9h00 - 13h00</p>
+                <div class="contact-form fade-in-right">
+                    <h3>Envoyez-nous un message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" name="name" required class="fade-in-scale stagger-delay-1">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Adresse email</label>
+                            <input type="email" id="email" name="email" required class="fade-in-scale stagger-delay-2">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <input type="text" id="subject" name="subject" required class="fade-in-scale stagger-delay-3">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required class="fade-in-scale stagger-delay-4"></textarea>
+                        </div>
+                        <button type="submit" class="btn fade-in-scale stagger-delay-5">Envoyer le message</button>
+                    </form>
                 </div>
             </div>
-            <div class="contact-form fade-in-right">
-                <h3>Envoyez-nous un message</h3>
-                <form id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Nom complet</label>
-                        <input type="text" id="name" name="name" required class="fade-in-scale stagger-delay-1">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Adresse email</label>
-                        <input type="email" id="email" name="email" required class="fade-in-scale stagger-delay-2">
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Sujet</label>
-                        <input type="text" id="subject" name="subject" required class="fade-in-scale stagger-delay-3">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required class="fade-in-scale stagger-delay-4"></textarea>
-                    </div>
-                    <button type="submit" class="btn fade-in-scale stagger-delay-5">Envoyer le message</button>
-                </form>
-            </div>
         </div>
-    </div>
-</section>
+    </section>
   </main>
 
   <!-- Pied de page -->
@@ -1306,334 +1261,228 @@
       <p class="copyright">© 2025 Centre Multifonctionnel Tri-Art - Tous droits réservés.</p>
     </div>
   </footer>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  
   <script>
-        // Script pour le menu hamburger
-        const hamburgerMenu = document.querySelector('.hamburger-menu');
-        const mobileNav = document.querySelector('.mobile-nav');
-        const closeMenu = document.querySelector('.close-menu');
-        const overlay = document.querySelector('.overlay');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
-
-        // Ouvrir le menu
-        hamburgerMenu.addEventListener('click', () => {
-            mobileNav.classList.add('active');
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        // Fermer le menu
-        function closeMobileMenu() {
-            mobileNav.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        closeMenu.addEventListener('click', closeMobileMenu);
-        overlay.addEventListener('click', closeMobileMenu);
-
-        // Fermer le menu quand on clique sur un lien
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
-        });
-
-        // Script pour les animations fade in au défilement
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observer tous les éléments avec les classes d'animation
-        document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Script pour le défilement fluide vers les ancres
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Script pour le formulaire de contact (simulation d'envoi)
-        const contactForm = document.querySelector('.contact-form form');
-        if(contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Merci pour votre message! Nous vous contacterons bientôt.');
-                this.reset();
-            });
-        }
-
-        // Script pour le bouton de réservation d'événement
-        const eventBtn = document.querySelector('.event-btn');
-        if(eventBtn) {
-            eventBtn.addEventListener('click', function() {
-                alert('Merci pour votre intérêt ! Vous serez redirigé vers le formulaire de réservation.');
-                // Ici vous pouvez ajouter la redirection vers un formulaire de réservation
-            });
-        }
-
-        // Script pour le carrousel slide
-        const track = document.querySelector(".carousel-track");
-        if (track) {
-            const slides = Array.from(track.children);
-            const nextBtn = document.querySelector(".next");
-            const prevBtn = document.querySelector(".prev");
-            const indicators = document.querySelectorAll(".carousel-indicator");
-            let currentIndex = 0;
-
-            // Fonction pour afficher la slide
-            function updateSlide(index) {
-                track.style.transform = `translateX(-${index * 100}%)`;
-                currentIndex = index;
-                
-                // Mettre à jour les indicateurs
-                indicators.forEach((indicator, i) => {
-                    if (i === index) {
-                        indicator.classList.add('active');
-                    } else {
-                        indicator.classList.remove('active');
-                    }
-                });
-            }
-
-            // Bouton suivant
-            if(nextBtn){
-                nextBtn.addEventListener("click", () => {
-                    currentIndex = (currentIndex + 1) % slides.length;
-                    updateSlide(currentIndex);
-                });
-            }
-
-            // Bouton précédent
-            if(prevBtn){
-                prevBtn.addEventListener("click", () => {
-                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                    updateSlide(currentIndex);
-                });
-            }
-
-            // Clic sur les indicateurs
-            indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', () => {
-                    updateSlide(index);
-                });
-            });
-
-            // Défilement auto toutes les 5s
-            setInterval(() => {
-                currentIndex = (currentIndex + 1) % slides.length;
-                updateSlide(currentIndex);
-            }, 5000);
-        }
-    // email.js - Configuration EmailJS pour le Centre Tri-Art
-
-// Initialisation d'EmailJS
-(function() {
+    // Initialisation d'EmailJS
     emailjs.init("YOUR_PUBLIC_KEY"); // Remplacez par votre Public Key
-})();
 
-// Fonction pour envoyer l'email
-function sendEmail(event) {
-    event.preventDefault();
-    
-    // Afficher l'indicateur de chargement
-    const submitBtn = event.target.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-    submitBtn.disabled = true;
-    
-    // Récupérer les données du formulaire
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value,
-        to_email: 'triarts2023@gmail.com',
-        date: new Date().toLocaleString('fr-FR')
-    };
-    
-    // Valider le formulaire
-    const errors = validateForm(formData);
-    if (errors.length > 0) {
-        showNotification('Veuillez corriger les erreurs dans le formulaire', 'error');
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        return;
-    }
-    
-    // Envoyer l'email avec VOS identifiants
-    emailjs.send("service_dpfk5u4", "template_d125pcg", formData)
-        .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            showNotification('Message envoyé avec succès! Nous vous répondrons bientôt.', 'success');
-            event.target.reset();
-        })
-        .catch(function(error) {
-            console.log('FAILED...', error);
-            showNotification('Erreur lors de l\'envoi. Veuillez réessayer ou nous contacter directement.', 'error');
-        })
-        .finally(function() {
+    // Fonction pour envoyer l'email
+    function sendEmail(event) {
+        event.preventDefault();
+        
+        // Afficher l'indicateur de chargement
+        const submitBtn = event.target.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+        submitBtn.disabled = true;
+        
+        // Récupérer les données du formulaire
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value,
+            to_email: 'triarts2023@gmail.com',
+            date: new Date().toLocaleString('fr-FR')
+        };
+        
+        // Valider le formulaire
+        const errors = validateForm(formData);
+        if (errors.length > 0) {
+            showNotification('Veuillez corriger les erreurs dans le formulaire', 'error');
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
-        });
-}
-
-// Fonction pour afficher les notifications
-function showNotification(message, type) {
-    // Supprimer les notifications existantes
-    const existingNotifications = document.querySelectorAll('.notification');
-    existingNotifications.forEach(notification => notification.remove());
-    
-    // Créer la notification
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.innerHTML = `
-        <div class="notification-content">
-            <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
-            <span>${message}</span>
-        </div>
-        <button class="notification-close">
-            <i class="fas fa-times"></i>
-        </button>
-    `;
-    
-    // Ajouter au document
-    document.body.appendChild(notification);
-    
-    // Fermer la notification
-    notification.querySelector('.notification-close').addEventListener('click', () => {
-        notification.remove();
-    });
-    
-    // Supprimer automatiquement après 5 secondes
-    setTimeout(() => {
-        if (notification.parentElement) {
-            notification.remove();
+            return;
         }
-    }, 5000);
-}
-
-// Validation du formulaire
-function validateForm(formData) {
-    const errors = [];
-    
-    if (!formData.name.trim()) errors.push('Le nom est requis');
-    if (!formData.email.trim()) {
-        errors.push('L\'email est requis');
-    } else if (!isValidEmail(formData.email)) {
-        errors.push('L\'email n\'est pas valide');
-    }
-    if (!formData.subject.trim()) errors.push('Le sujet est requis');
-    if (!formData.message.trim()) errors.push('Le message est requis');
-    
-    return errors;
-}
-
-// Validation d'email
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-// Initialisation
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.querySelector('.contact-form form');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', sendEmail);
         
-        // Validation en temps réel
-        const inputs = contactForm.querySelectorAll('input, textarea');
-        inputs.forEach(input => {
-            input.addEventListener('blur', function() {
-                validateField(this);
+        // Envoyer l'email avec VOS identifiants
+        emailjs.send("service_dpfk5u4", "template_d125pcg", formData)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                showNotification('Message envoyé avec succès! Nous vous répondrons bientôt.', 'success');
+                event.target.reset();
+            })
+            .catch(function(error) {
+                console.log('FAILED...', error);
+                showNotification('Erreur lors de l\'envoi. Veuillez réessayer ou nous contacter directement.', 'error');
+            })
+            .finally(function() {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
             });
+    }
+
+    // Fonction pour afficher les notifications
+    function showNotification(message, type) {
+        // Supprimer les notifications existantes
+        const existingNotifications = document.querySelectorAll('.notification');
+        existingNotifications.forEach(notification => notification.remove());
+        
+        // Créer la notification
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.innerHTML = `
+            <div class="notification-content">
+                <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                <span>${message}</span>
+            </div>
+            <button class="notification-close">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+        
+        // Ajouter au document
+        document.body.appendChild(notification);
+        
+        // Fermer la notification
+        notification.querySelector('.notification-close').addEventListener('click', () => {
+            notification.remove();
         });
+        
+        // Supprimer automatiquement après 5 secondes
+        setTimeout(() => {
+            if (notification.parentElement) {
+                notification.remove();
+            }
+        }, 5000);
     }
-});
 
-// Validation de champ individuel
-function validateField(field) {
-    const value = field.value.trim();
-    let isValid = true;
-    let errorMessage = '';
-    
-    switch (field.id) {
-        case 'name':
-            if (!value) {
-                isValid = false;
-                errorMessage = 'Le nom est requis';
-            }
-            break;
-        case 'email':
-            if (!value) {
-                isValid = false;
-                errorMessage = 'L\'email est requis';
-            } else if (!isValidEmail(value)) {
-                isValid = false;
-                errorMessage = 'Format d\'email invalide';
-            }
-            break;
-        case 'subject':
-            if (!value) {
-                isValid = false;
-                errorMessage = 'Le sujet est requis';
-            }
-            break;
-        case 'message':
-            if (!value) {
-                isValid = false;
-                errorMessage = 'Le message est requis';
-            }
-            break;
+    // Validation du formulaire
+    function validateForm(formData) {
+        const errors = [];
+        
+        if (!formData.name.trim()) errors.push('Le nom est requis');
+        if (!formData.email.trim()) {
+            errors.push('L\'email est requis');
+        } else if (!isValidEmail(formData.email)) {
+            errors.push('L\'email n\'est pas valide');
+        }
+        if (!formData.subject.trim()) errors.push('Le sujet est requis');
+        if (!formData.message.trim()) errors.push('Le message est requis');
+        
+        return errors;
     }
-    
-    if (!isValid) {
-        showFieldError(field, errorMessage);
-    } else {
-        clearFieldError(field);
-    }
-    
-    return isValid;
-}
 
-function showFieldError(field, message) {
-    clearFieldError(field);
-    field.style.borderColor = '#e74c3c';
-    
-    const errorElement = document.createElement('div');
-    errorElement.className = 'error-message';
-    errorElement.textContent = message;
-    field.parentNode.appendChild(errorElement);
-}
-
-function clearFieldError(field) {
-    field.style.borderColor = '#ddd';
-    const errorElement = field.parentNode.querySelector('.error-message');
-    if (errorElement) {
-        errorElement.remove();
+    // Validation d'email
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
     }
-}
-    </script>
+
+    // Script pour le menu hamburger
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const closeMenu = document.querySelector('.close-menu');
+    const overlay = document.querySelector('.overlay');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+
+    // Ouvrir le menu
+    hamburgerMenu.addEventListener('click', () => {
+        mobileNav.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Fermer le menu
+    function closeMobileMenu() {
+        mobileNav.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    closeMenu.addEventListener('click', closeMobileMenu);
+    overlay.addEventListener('click', closeMobileMenu);
+
+    // Fermer le menu quand on clique sur un lien
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Script pour les animations fade in au défilement
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Observer tous les éléments avec les classes d'animation
+    document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Script pour le défilement fluide vers les ancres
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Script pour le carrousel slide
+    const track = document.querySelector(".carousel-track");
+    if (track) {
+        const slides = Array.from(track.children);
+        const nextBtn = document.querySelector(".next");
+        const prevBtn = document.querySelector(".prev");
+        let currentIndex = 0;
+
+        // Fonction pour afficher la slide
+        function updateSlide(index) {
+            track.style.transform = `translateX(-${index * 100}%)`;
+            currentIndex = index;
+        }
+
+        // Bouton suivant
+        if(nextBtn){
+            nextBtn.addEventListener("click", () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlide(currentIndex);
+            });
+        }
+
+        // Bouton précédent
+        if(prevBtn){
+            prevBtn.addEventListener("click", () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateSlide(currentIndex);
+            });
+        }
+
+        // Défilement auto toutes les 5s
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlide(currentIndex);
+        }, 5000);
+    }
+
+    // Initialisation du formulaire de contact
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contact-form');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', sendEmail);
+        }
+    });
+  </script>
 </body>
 </html>
