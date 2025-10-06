@@ -1321,121 +1321,96 @@
   </footer>
 
   <!-- EmailJS SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  
-  <script>
-    // Initialisation d'EmailJS
-    emailjs.init("YOUR_PUBLIC_KEY"); // Remplacez par votre Public Key
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-    // Fonction pour envoyer l'email
-    function sendEmail(event) {
-        event.preventDefault();
-        
-        // Afficher l'indicateur de chargement
-        const submitBtn = event.target.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-        submitBtn.disabled = true;
-        
-        // Récupérer les données du formulaire
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value,
-            to_email: 'triarts2023@gmail.com',
-            date: new Date().toLocaleString('fr-FR')
-        };
-        
-        // Valider le formulaire
-        const errors = validateForm(formData);
-        if (errors.length > 0) {
-            showNotification('Veuillez corriger les erreurs dans le formulaire', 'error');
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            return;
-        }
-        
-        // Envoyer l'email avec VOS identifiants
-        emailjs.send("service_dpfk5u4", "template_d125pcg", formData)
-            .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-                showNotification('Message envoyé avec succès! Nous vous répondrons bientôt.', 'success');
-                event.target.reset();
-            })
-            .catch(function(error) {
-                console.log('FAILED...', error);
-                showNotification('Erreur lors de l\'envoi. Veuillez réessayer ou nous contacter directement.', 'error');
-            })
-            .finally(function() {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            });
+<script>
+  // Initialisation avec ta Public Key
+  emailjs.init("BM9uU4nDEZcdlQc-Z"); 
+
+  // Fonction pour envoyer l'email
+  function sendEmail(event) {
+    event.preventDefault();
+    
+    // Bouton d’envoi en mode chargement
+    const submitBtn = event.target.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+    submitBtn.disabled = true;
+
+    // Récupération des données du formulaire
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      subject: document.getElementById('subject').value,
+      message: document.getElementById('message').value,
+      date: new Date().toLocaleString('fr-FR')
+    };
+
+    // Validation simple
+    const errors = validateForm(formData);
+    if (errors.length > 0) {
+      showNotification('⚠️ Veuillez corriger les erreurs dans le formulaire.', 'error');
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+      return;
     }
 
-    // Fonction pour afficher les notifications
-    function showNotification(message, type) {
-        // Supprimer les notifications existantes
-        const existingNotifications = document.querySelectorAll('.notification');
-        existingNotifications.forEach(notification => notification.remove());
-        
-        // Créer la notification
-        const notification = document.createElement('div');
-        notification.className = `notification ${type}`;
-        notification.innerHTML = `
-            <div class="notification-content">
-                <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
-                <span>${message}</span>
-            </div>
-            <button class="notification-close">
-                <i class="fas fa-times"></i>
-            </button>
-        `;
-        
-        // Ajouter au document
-        document.body.appendChild(notification);
-        
-        // Fermer la notification
-        notification.querySelector('.notification-close').addEventListener('click', () => {
-            notification.remove();
-        });
-        
-        // Supprimer automatiquement après 5 secondes
-        setTimeout(() => {
-            if (notification.parentElement) {
-                notification.remove();
-            }
-        }, 5000);
-    }
+    // Envoi via EmailJS
+    emailjs.send("service_dpfk5u4", "template_dl85c2j", formData)
+      .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        showNotification('✅ Message envoyé avec succès !', 'success');
+        event.target.reset();
+      })
+      .catch(function(error) {
+        console.log('FAILED...', error);
+        showNotification('❌ Erreur lors de l\'envoi. Réessayez.', 'error');
+      })
+      .finally(function() {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      });
+  }
 
-    // Validation du formulaire
-    function validateForm(formData) {
-        const errors = [];
-        
-        if (!formData.name.trim()) errors.push('Le nom est requis');
-        if (!formData.email.trim()) {
-            errors.push('L\'email est requis');
-        } else if (!isValidEmail(formData.email)) {
-            errors.push('L\'email n\'est pas valide');
-        }
-        if (!formData.subject.trim()) errors.push('Le sujet est requis');
-        if (!formData.message.trim()) errors.push('Le message est requis');
-        
-        return errors;
-    }
+  // Fonction de notification
+  function showNotification(message, type) {
+    const existing = document.querySelectorAll('.notification');
+    existing.forEach(n => n.remove());
 
-    // Validation d'email
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
+    const notif = document.createElement('div');
+    notif.className = `notification ${type}`;
+    notif.innerHTML = `
+      <div class="notification-content">
+        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+        <span>${message}</span>
+      </div>
+      <button class="notification-close"><i class="fas fa-times"></i></button>
+    `;
 
-    // Script pour le menu hamburger
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const mobileNav = document.querySelector('.mobile-nav');
-    const closeMenu = document.querySelector('.close-menu');
-    const overlay = document.querySelector('.overlay');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+    document.body.appendChild(notif);
+
+    notif.querySelector('.notification-close').addEventListener('click', () => notif.remove());
+
+    setTimeout(() => { if (notif.parentElement) notif.remove(); }, 5000);
+  }
+
+  // Validation du formulaire
+  function validateForm(formData) {
+    const errors = [];
+    if (!formData.name.trim()) errors.push('Nom requis');
+    if (!formData.email.trim()) errors.push('Email requis');
+    if (!isValidEmail(formData.email)) errors.push('Email invalide');
+    if (!formData.subject.trim()) errors.push('Sujet requis');
+    if (!formData.message.trim()) errors.push('Message requis');
+    return errors;
+  }
+
+  // Vérification d’un email valide
+  function isValidEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  }
+
 
     // Ouvrir le menu
     hamburgerMenu.addEventListener('click', () => {
