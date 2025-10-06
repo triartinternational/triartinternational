@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Centre Multifonctionnel Tri-Art à Rufisque Est - Un espace moderne pour formations, séminaires et événements culturels">
   <title>Centre Multifonctionnel Tri-Art - Rufisque Est</title>
-   <style>
+ <style>
         /* Styles généraux */
         * {
             margin: 0;
@@ -906,7 +907,7 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <!-- En-tête -->
@@ -914,11 +915,12 @@
     <div class="container">
       <div class="header-content">
         <div class="logo fade-in-left">
-          <img src="imagetriart.jpg" alt="Logo Centre Multifonctionnel Tri-Art">
+          <!-- Image de remplacement si l'image originale n'est pas disponible -->
+          <img src="imagetriart.jpg" alt="Logo Centre Multifonctionnel Tri-Art" onerror="this.src='https://via.placeholder.com/200x80/2c3e50/ffffff?text=Tri-Art'">
         </div>
 
         <!-- Navigation Desktop -->
-        <nav class="desktop-nav">
+        <nav class="desktop-nav" aria-label="Navigation principale">
           <ul>
             <li class="fade-in stagger-delay-1"><a href="#accueil">Accueil</a></li>
             <li class="fade-in stagger-delay-2"><a href="#apropos">À propos</a></li>
@@ -931,11 +933,11 @@
         </nav>
 
         <!-- Menu Hamburger -->
-        <div class="hamburger-menu" aria-label="Menu mobile">
+        <button class="hamburger-menu" aria-label="Ouvrir le menu mobile" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
       </div>
     </div>
 
@@ -1002,7 +1004,8 @@
             </p>
           </div>
           <div class="about-image fade-in-right">
-            <img src="imagetriart.jpg" alt="Façade du Centre Tri-Art">
+            <!-- Image de remplacement si l'image originale n'est pas disponible -->
+            <img src="imagetriart.jpg" alt="Façade du Centre Tri-Art" onerror="this.src='https://via.placeholder.com/600x400/2c3e50/ffffff?text=Centre+Tri-Art'">
           </div>
         </div>
       </div>
@@ -1050,29 +1053,31 @@
 
             <!-- Galerie 3 images -->
             <div class="services-gallery">
-                <img src="service1.jpg" alt="Formations professionnelles" class="fade-in-scale stagger-delay-1">
-                <img src="service2.jpg" alt="Événements culturels" class="fade-in-scale stagger-delay-2">
-                <img src="service3.jpg" alt="Séminaires d'entreprise" class="fade-in-scale stagger-delay-3">
+                <!-- Images de remplacement si les images originales ne sont pas disponibles -->
+                <img src="service1.jpg" alt="Formations professionnelles" class="fade-in-scale stagger-delay-1" onerror="this.src='https://via.placeholder.com/400x250/e74c3c/ffffff?text=Formations'">
+                <img src="service2.jpg" alt="Événements culturels" class="fade-in-scale stagger-delay-2" onerror="this.src='https://via.placeholder.com/400x250/2c3e50/ffffff?text=Événements'">
+                <img src="service3.jpg" alt="Séminaires d'entreprise" class="fade-in-scale stagger-delay-3" onerror="this.src='https://via.placeholder.com/400x250/3498db/ffffff?text=Séminaires'">
             </div>
 
             <!-- Carrousel Slide -->
             <div class="services-carousel fade-in">
                 <div class="carousel-track">
-                    <img src="carrousel1.jpg" alt="Atelier créatif">
-                    <img src="carrousel2.jpg" alt="Salle de formation">
-                    <img src="carrousel3.jpg" alt="Événement culturel">
-                    <img src="carrousel4.jpg" alt="Séminaire">
-                    <img src="WhatsApp Image 2025-09-29 at 15.13.10.jpeg" alt="Exposition">
-                    <img src="a2ab5892-393d-4f15-9234-9ae73ec25ad3.jpeg" alt="Spectacle">
-                    <img src="WhatsApp Image 2025-09-24 at 12.53.59 (1).jpeg" alt="Atelier pratique">
-                    <img src="WhatsApp Image 2025-09-24 at 12.51.44 (4).jpeg" alt="Conférence">
-                    <img src="WhatsApp Image 2025-09-29 at 15.13.12.jpeg" alt="Défilé de mode">
-                    <img src="WhatsApp Image 2025-09-29 at 15.13.12 (1).jpeg" alt="Ciné-club">
+                    <!-- Images de remplacement si les images originales ne sont pas disponibles -->
+                    <img src="carrousel1.jpg" alt="Atelier créatif" onerror="this.src='https://via.placeholder.com/800x400/2c3e50/ffffff?text=Atelier+Créatif'">
+                    <img src="carrousel2.jpg" alt="Salle de formation" onerror="this.src='https://via.placeholder.com/800x400/e74c3c/ffffff?text=Salle+Formation'">
+                    <img src="carrousel3.jpg" alt="Événement culturel" onerror="this.src='https://via.placeholder.com/800x400/3498db/ffffff?text=Événement+Culturel'">
+                    <img src="carrousel4.jpg" alt="Séminaire" onerror="this.src='https://via.placeholder.com/800x400/2ecc71/ffffff?text=Séminaire'">
+                    <img src="WhatsApp Image 2025-09-29 at 15.13.10.jpeg" alt="Exposition" onerror="this.src='https://via.placeholder.com/800x400/9b59b6/ffffff?text=Exposition'">
+                    <img src="a2ab5892-393d-4f15-9234-9ae73ec25ad3.jpeg" alt="Spectacle" onerror="this.src='https://via.placeholder.com/800x400/f39c12/ffffff?text=Spectacle'">
+                    <img src="WhatsApp Image 2025-09-24 at 12.53.59 (1).jpeg" alt="Atelier pratique" onerror="this.src='https://via.placeholder.com/800x400/1abc9c/ffffff?text=Atelier+Pratique'">
+                    <img src="WhatsApp Image 2025-09-24 at 12.51.44 (4).jpeg" alt="Conférence" onerror="this.src='https://via.placeholder.com/800x400/34495e/ffffff?text=Conférence'">
+                    <img src="WhatsApp Image 2025-09-29 at 15.13.12.jpeg" alt="Défilé de mode" onerror="this.src='https://via.placeholder.com/800x400/e74c3c/ffffff?text=Défilé+Mode'">
+                    <img src="WhatsApp Image 2025-09-29 at 15.13.12 (1).jpeg" alt="Ciné-club" onerror="this.src='https://via.placeholder.com/800x400/3498db/ffffff?text=Ciné-Club'">
                 </div>
                 
                 <!-- Flèches -->
-                <button class="prev">&#10094;</button>
-                <button class="next">&#10095;</button>
+                <button class="prev" aria-label="Image précédente">&#10094;</button>
+                <button class="next" aria-label="Image suivante">&#10095;</button>
             </div>
         </div>
     </section>
@@ -1094,7 +1099,8 @@
                             <span class="event-year">2025</span>
                         </div>
                         <div class="event-image">
-                            <img src="event1.jpeg" alt="Exposition Recyclage Poudre de Bois">
+                            <!-- Image de remplacement si l'image originale n'est pas disponible -->
+                            <img src="event1.jpeg" alt="Exposition Recyclage Poudre de Bois" onerror="this.src='https://via.placeholder.com/300x200/e74c3c/ffffff?text=Exposition+Recyclage'">
                         </div>
                     </div>
                     <div class="event-content">
@@ -1117,15 +1123,15 @@
                             <span>Horaires: 10h00 - 19h00</span>
                         </div>
                         <p class="event-description">
-    Laissez-vous emporter par la métamorphose artistique où les résidus de bois 
-    prennent vie sous forme d'œuvres captivantes. Un voyage sensoriel au cœur 
-    de l'éco-créativité, où chaque tableau raconte une histoire de renaissance 
-    et d'innovation durable.
-</p>
+                            Laissez-vous emporter par la métamorphose artistique où les résidus de bois 
+                            prennent vie sous forme d'œuvres captivantes. Un voyage sensoriel au cœur 
+                            de l'éco-créativité, où chaque tableau raconte une histoire de renaissance 
+                            et d'innovation durable.
+                        </p>
                         <div class="event-cta">
                             <a href="https://wa.me/221776332771?text=Bonjour%2C%20je%20souhaiterais%20r%C3%A9server%20ma%20place%20pour%20votre%20%C3%A9v%C3%A9nement.%20Pouvez-vous%20m%E2%80%99envoyer%20plus%20de%20d%C3%A9tails%20s%E2%80%99il%20vous%20pla%C3%AEt%20%3F" 
                             target="_blank" class="btn-reserver">
-                            <button class="event-btn">Réserver ma place</button>
+                                <button class="event-btn">Réserver ma place</button>
                             </a>
                         </div>
                     </div>
@@ -1140,7 +1146,8 @@
                             <span class="event-year">2025</span>
                         </div>
                         <div class="event-image">
-                            <img src="events2.jpeg" alt="Festival d'Art Contemporain">
+                            <!-- Image de remplacement si l'image originale n'est pas disponible -->
+                            <img src="events2.jpeg" alt="Festival d'Art Contemporain" onerror="this.src='https://via.placeholder.com/300x200/2c3e50/ffffff?text=Festival+Art'">
                         </div>
                     </div>
                     <div class="event-content">
@@ -1162,17 +1169,16 @@
                             <i class="fas fa-clock"></i>
                             <span>Horaires: 09h00 - 22h00</span>
                         </div>
-<p class="event-description">
-    Plongez dans l’univers de la transformation artistique, où les fragments de bois 
-    se réinventent en créations uniques et fascinantes. Une expérience sensorielle qui 
-    célèbre l’éco-créativité, révélant à travers chaque œuvre un récit de renaissance 
-    et d’innovation responsable.
-</p>
-
+                        <p class="event-description">
+                            Plongez dans l'univers de la transformation artistique, où les fragments de bois 
+                            se réinventent en créations uniques et fascinantes. Une expérience sensorielle qui 
+                            célèbre l'éco-créativité, révélant à travers chaque œuvre un récit de renaissance 
+                            et d'innovation responsable.
+                        </p>
                         <div class="event-cta">
                             <a href="https://wa.me/221776332771?text=Bonjour%2C%20je%20souhaiterais%20r%C3%A9server%20ma%20place%20pour%20le%20festival%20d'art%20contemporain.%20Pouvez-vous%20m%E2%80%99envoyer%20plus%20de%20d%C3%A9tails%20s%E2%80%99il%20vous%20pla%C3%AEt%20%3F" 
                             target="_blank" class="btn-reserver">
-                            <button class="event-btn">Réserver ma place</button>
+                                <button class="event-btn">Réserver ma place</button>
                             </a>
                         </div>
                     </div>
@@ -1208,7 +1214,7 @@
                     <i class="fas fa-volume-up"></i>
                     <h3>Régie son et lumière</h3>
                 </div>
-                <div class="equipment-item fade-in-scale stagger-delay-5">
+                <div class="equipment-item fade-in-scale stagger-delay-6">
                     <i class="fas fa-chair"></i>
                     <h3>250 places assises</h3>
                 </div>
@@ -1217,7 +1223,7 @@
     </section>
 
     <!-- Localisation -->
-       <section id="localisation" class="location">
+    <section id="localisation" class="location">
         <div class="container">
             <div class="section-title">
                 <h2 class="fade-in">Notre Localisation</h2>
@@ -1233,7 +1239,7 @@
                     </p>
                 </div>
                 <div class="map fade-in-right">
-                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15443.080183189914!2d-17.26084606048113!3d14.73352701140081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec100411b0e9f19%3A0xe54e5659f8c6b758!2sRufisque%20Est%2C%20S%C3%A9n%C3%A9gal!5e0!3m2!1sen!2sfr!4v1700000000000!5m2!1sen!2sfr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15443.080183189914!2d-17.26084606048113!3d14.73352701140081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec100411b0e9f19%3A0xe54e5659f8c6b758!2sRufisque%20Est%2C%20S%C3%A9n%C3%A9gal!5e0!3m2!1sen!2sfr!4v1700000000000!5m2!1sen!2sfr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" title="Carte du Centre Tri-Art à Rufisque Est"></iframe>
                 </div>
             </div>
         </div>
@@ -1267,22 +1273,26 @@
                 </div>
                 <div class="contact-form fade-in-right">
                     <h3>Envoyez-nous un message</h3>
-                    <form id="contact-form">
+                    <form id="contact-form" novalidate>
                         <div class="form-group">
                             <label for="name">Nom complet</label>
                             <input type="text" id="name" name="name" required class="fade-in-scale stagger-delay-1">
+                            <div class="error-message" id="name-error"></div>
                         </div>
                         <div class="form-group">
                             <label for="email">Adresse email</label>
                             <input type="email" id="email" name="email" required class="fade-in-scale stagger-delay-2">
+                            <div class="error-message" id="email-error"></div>
                         </div>
                         <div class="form-group">
                             <label for="subject">Sujet</label>
                             <input type="text" id="subject" name="subject" required class="fade-in-scale stagger-delay-3">
+                            <div class="error-message" id="subject-error"></div>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" required class="fade-in-scale stagger-delay-4"></textarea>
+                            <div class="error-message" id="message-error"></div>
                         </div>
                         <button type="submit" class="btn fade-in-scale stagger-delay-5">Envoyer le message</button>
                     </form>
@@ -1312,9 +1322,9 @@
         <div class="footer-column">
           <h3>Suivez-nous</h3>
           <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61575092460122"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.tiktok.com/@labeltriart"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.youtube.com/@Labeltriart"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61575092460122" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@labeltriart" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Labeltriart" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
       </div>
@@ -1323,109 +1333,145 @@
   </footer>
 
   <!-- EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-<script>
-  // Initialisation avec ta Public Key
-  emailjs.init("BM9uU4nDEZcdlQc-Z"); 
+  <script>
+    // Initialisation avec ta Public Key
+    emailjs.init("BM9uU4nDEZcdlQc-Z"); 
 
-  // Fonction pour envoyer l'email
-  function sendEmail(event) {
-    event.preventDefault();
-    
-    // Bouton d’envoi en mode chargement
-    const submitBtn = event.target.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-    submitBtn.disabled = true;
+    // Fonction pour envoyer l'email
+    function sendEmail(event) {
+      event.preventDefault();
+      
+      // Validation du formulaire
+      if (!validateForm()) {
+        return;
+      }
+      
+      // Bouton d'envoi en mode chargement
+      const submitBtn = event.target.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+      submitBtn.disabled = true;
 
-    // Récupération des données du formulaire
-    const formData = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      subject: document.getElementById('subject').value,
-      message: document.getElementById('message').value,
-      date: new Date().toLocaleString('fr-FR')
-    };
+      // Récupération des données du formulaire
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value,
+        date: new Date().toLocaleString('fr-FR')
+      };
 
-    // Validation simple
-    const errors = validateForm(formData);
-    if (errors.length > 0) {
-      showNotification('⚠️ Veuillez corriger les erreurs dans le formulaire.', 'error');
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-      return;
+      // Envoi via EmailJS
+      emailjs.send("service_dpfk5u4", "template_dl85c2j", formData)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          showNotification('✅ Message envoyé avec succès !', 'success');
+          event.target.reset();
+        })
+        .catch(function(error) {
+          console.log('FAILED...', error);
+          showNotification('❌ Erreur lors de l\'envoi. Réessayez.', 'error');
+        })
+        .finally(function() {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        });
     }
 
-    // Envoi via EmailJS
-    emailjs.send("service_dpfk5u4", "template_dl85c2j", formData)
-      .then(function(response) {
-        console.log('SUCCESS!', response.status, response.text);
-        showNotification('✅ Message envoyé avec succès !', 'success');
-        event.target.reset();
-      })
-      .catch(function(error) {
-        console.log('FAILED...', error);
-        showNotification('❌ Erreur lors de l\'envoi. Réessayez.', 'error');
-      })
-      .finally(function() {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
+    // Fonction de validation du formulaire
+    function validateForm() {
+      let isValid = true;
+      
+      // Réinitialiser les messages d'erreur
+      document.querySelectorAll('.error-message').forEach(el => {
+        el.textContent = '';
       });
-  }
+      
+      // Validation du nom
+      const name = document.getElementById('name').value.trim();
+      if (!name) {
+        document.getElementById('name-error').textContent = 'Le nom est requis';
+        isValid = false;
+      }
+      
+      // Validation de l'email
+      const email = document.getElementById('email').value.trim();
+      if (!email) {
+        document.getElementById('email-error').textContent = 'L\'email est requis';
+        isValid = false;
+      } else if (!isValidEmail(email)) {
+        document.getElementById('email-error').textContent = 'L\'email n\'est pas valide';
+        isValid = false;
+      }
+      
+      // Validation du sujet
+      const subject = document.getElementById('subject').value.trim();
+      if (!subject) {
+        document.getElementById('subject-error').textContent = 'Le sujet est requis';
+        isValid = false;
+      }
+      
+      // Validation du message
+      const message = document.getElementById('message').value.trim();
+      if (!message) {
+        document.getElementById('message-error').textContent = 'Le message est requis';
+        isValid = false;
+      }
+      
+      return isValid;
+    }
 
-  // Fonction de notification
-  function showNotification(message, type) {
-    const existing = document.querySelectorAll('.notification');
-    existing.forEach(n => n.remove());
+    // Fonction de notification
+    function showNotification(message, type) {
+      const existing = document.querySelectorAll('.notification');
+      existing.forEach(n => n.remove());
 
-    const notif = document.createElement('div');
-    notif.className = `notification ${type}`;
-    notif.innerHTML = `
-      <div class="notification-content">
-        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
-        <span>${message}</span>
-      </div>
-      <button class="notification-close"><i class="fas fa-times"></i></button>
-    `;
+      const notif = document.createElement('div');
+      notif.className = `notification ${type}`;
+      notif.innerHTML = `
+        <div class="notification-content">
+          <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+          <span>${message}</span>
+        </div>
+        <button class="notification-close"><i class="fas fa-times"></i></button>
+      `;
 
-    document.body.appendChild(notif);
+      document.body.appendChild(notif);
 
-    notif.querySelector('.notification-close').addEventListener('click', () => notif.remove());
+      notif.querySelector('.notification-close').addEventListener('click', () => notif.remove());
 
-    setTimeout(() => { if (notif.parentElement) notif.remove(); }, 5000);
-  }
+      setTimeout(() => { if (notif.parentElement) notif.remove(); }, 5000);
+    }
 
-  // Validation du formulaire
-  function validateForm(formData) {
-    const errors = [];
-    if (!formData.name.trim()) errors.push('Nom requis');
-    if (!formData.email.trim()) errors.push('Email requis');
-    if (!isValidEmail(formData.email)) errors.push('Email invalide');
-    if (!formData.subject.trim()) errors.push('Sujet requis');
-    if (!formData.message.trim()) errors.push('Message requis');
-    return errors;
-  }
+    // Vérification d'un email valide
+    function isValidEmail(email) {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
+    }
 
-  // Vérification d’un email valide
-  function isValidEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-  }
-
+    // Gestion du menu mobile
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const closeMenu = document.querySelector('.close-menu');
+    const overlay = document.querySelector('.overlay');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
 
     // Ouvrir le menu
     hamburgerMenu.addEventListener('click', () => {
-        mobileNav.classList.add('active');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
+      mobileNav.classList.add('active');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      hamburgerMenu.setAttribute('aria-expanded', 'true');
     });
 
     // Fermer le menu
     function closeMobileMenu() {
-        mobileNav.classList.remove('active');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
+      mobileNav.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+      hamburgerMenu.setAttribute('aria-expanded', 'false');
     }
 
     closeMenu.addEventListener('click', closeMobileMenu);
@@ -1433,90 +1479,90 @@
 
     // Fermer le menu quand on clique sur un lien
     mobileNavLinks.forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
+      link.addEventListener('click', closeMobileMenu);
     });
 
     // Script pour les animations fade in au défilement
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
     }, observerOptions);
 
     // Observer tous les éléments avec les classes d'animation
     document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale').forEach(el => {
-        observer.observe(el);
+      observer.observe(el);
     });
 
     // Script pour le défilement fluide vers les ancres
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if(targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if(targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if(targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
     });
 
     // Script pour le carrousel slide
     const track = document.querySelector(".carousel-track");
     if (track) {
-        const slides = Array.from(track.children);
-        const nextBtn = document.querySelector(".next");
-        const prevBtn = document.querySelector(".prev");
-        let currentIndex = 0;
+      const slides = Array.from(track.children);
+      const nextBtn = document.querySelector(".next");
+      const prevBtn = document.querySelector(".prev");
+      let currentIndex = 0;
 
-        // Fonction pour afficher la slide
-        function updateSlide(index) {
-            track.style.transform = `translateX(-${index * 100}%)`;
-            currentIndex = index;
-        }
+      // Fonction pour afficher la slide
+      function updateSlide(index) {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        currentIndex = index;
+      }
 
-        // Bouton suivant
-        if(nextBtn){
-            nextBtn.addEventListener("click", () => {
-                currentIndex = (currentIndex + 1) % slides.length;
-                updateSlide(currentIndex);
-            });
-        }
+      // Bouton suivant
+      if(nextBtn){
+        nextBtn.addEventListener("click", () => {
+          currentIndex = (currentIndex + 1) % slides.length;
+          updateSlide(currentIndex);
+        });
+      }
 
-        // Bouton précédent
-        if(prevBtn){
-            prevBtn.addEventListener("click", () => {
-                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                updateSlide(currentIndex);
-            });
-        }
+      // Bouton précédent
+      if(prevBtn){
+        prevBtn.addEventListener("click", () => {
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          updateSlide(currentIndex);
+        });
+      }
 
-        // Défilement auto toutes les 5s
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateSlide(currentIndex);
-        }, 5000);
+      // Défilement auto toutes les 5s
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlide(currentIndex);
+      }, 5000);
     }
 
     // Initialisation du formulaire de contact
     document.addEventListener('DOMContentLoaded', function() {
-        const contactForm = document.getElementById('contact-form');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', sendEmail);
-        }
+      const contactForm = document.getElementById('contact-form');
+      
+      if (contactForm) {
+        contactForm.addEventListener('submit', sendEmail);
+      }
     });
   </script>
 </body>
