@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centre Multifonctionnel Tri-Art - Rufisque Est</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centre Multifonctionnel Tri-Art - Rufisque Est</title>
+   <style>
         /* Styles généraux */
         * {
             margin: 0;
@@ -12,71 +12,71 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         body {
             line-height: 1.6;
             color: #333;
             background-color: #f9f9f9;
         }
-
+        
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
         }
-
+        
         /* Animations Fade In */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-
+        
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
+        
         .fade-in-left {
             opacity: 0;
             transform: translateX(-50px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-
+        
         .fade-in-left.visible {
             opacity: 1;
             transform: translateX(0);
         }
-
+        
         .fade-in-right {
             opacity: 0;
             transform: translateX(50px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-
+        
         .fade-in-right.visible {
             opacity: 1;
             transform: translateX(0);
         }
-
+        
         .fade-in-scale {
             opacity: 0;
             transform: scale(0.9);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-
+        
         .fade-in-scale.visible {
             opacity: 1;
             transform: scale(1);
         }
-
+        
         .stagger-delay-1 { transition-delay: 0.1s; }
         .stagger-delay-2 { transition-delay: 0.2s; }
         .stagger-delay-3 { transition-delay: 0.3s; }
         .stagger-delay-4 { transition-delay: 0.4s; }
         .stagger-delay-5 { transition-delay: 0.5s; }
-
+        
         /* En-tête */
         header {
             background-color: #2c3e50;
@@ -87,37 +87,38 @@
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
+        
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .logo {
             display: flex;
             align-items: center;
         }
-
+        
         .logo img {
             max-height: 80px;
             width: auto;
+            border-radius: 5px;
         }
-
+        
         /* Navigation Desktop */
         .desktop-nav {
             display: flex;
         }
-
+        
         .desktop-nav ul {
             display: flex;
             list-style: none;
         }
-
+        
         .desktop-nav ul li {
             margin-left: 20px;
         }
-
+        
         .desktop-nav ul li a {
             color: white;
             text-decoration: none;
@@ -126,12 +127,12 @@
             padding: 8px 12px;
             border-radius: 4px;
         }
-
+        
         .desktop-nav ul li a:hover {
             color: #e74c3c;
             background-color: rgba(255,255,255,0.1);
         }
-
+        
         /* Menu Hamburger */
         .hamburger-menu {
             display: none;
@@ -139,7 +140,7 @@
             cursor: pointer;
             padding: 5px;
         }
-
+        
         .hamburger-menu span {
             width: 25px;
             height: 3px;
@@ -148,7 +149,7 @@
             transition: 0.3s;
             border-radius: 2px;
         }
-
+        
         /* Navigation Mobile */
         .mobile-nav {
             position: fixed;
@@ -163,19 +164,19 @@
             padding: 80px 20px 20px;
             box-shadow: -5px 0 15px rgba(0,0,0,0.3);
         }
-
+        
         .mobile-nav.active {
             right: 0;
         }
-
+        
         .mobile-nav ul {
             list-style: none;
         }
-
+        
         .mobile-nav ul li {
             margin-bottom: 15px;
         }
-
+        
         .mobile-nav ul li a {
             color: white;
             text-decoration: none;
@@ -185,11 +186,11 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-
+        
         .mobile-nav ul li a:hover {
             background-color: #e74c3c;
         }
-
+        
         .close-menu {
             position: absolute;
             top: 20px;
@@ -201,7 +202,7 @@
             cursor: pointer;
             padding: 5px;
         }
-
+        
         .overlay {
             position: fixed;
             top: 0;
@@ -212,30 +213,30 @@
             z-index: 1000;
             display: none;
         }
-
+        
         .overlay.active {
             display: block;
         }
-
+        
         /* Bannière principale */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1920x600') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             color: white;
             text-align: center;
             padding: 100px 0;
         }
-
+        
         .hero h2 {
             font-size: 3rem;
             margin-bottom: 20px;
         }
-
+        
         .hero p {
             font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto 30px;
         }
-
+        
         .btn {
             display: inline-block;
             background-color: #e74c3c;
@@ -246,22 +247,22 @@
             font-weight: bold;
             transition: background-color 0.3s, transform 0.3s;
         }
-
+        
         .btn:hover {
             background-color: #c0392b;
             transform: translateY(-3px);
         }
-
+        
         /* Sections */
         section {
             padding: 80px 0;
         }
-
+        
         .section-title {
             text-align: center;
             margin-bottom: 50px;
         }
-
+        
         .section-title h2 {
             font-size: 2.5rem;
             color: #2c3e50;
@@ -269,7 +270,7 @@
             display: inline-block;
             padding-bottom: 15px;
         }
-
+        
         .section-title h2::after {
             content: '';
             position: absolute;
@@ -280,32 +281,32 @@
             height: 3px;
             background-color: #e74c3c;
         }
-
+        
         /* À propos */
         .about-content {
             display: flex;
             align-items: center;
             gap: 40px;
         }
-
+        
         .about-text {
             flex: 1;
             font-size: 1.1rem;
         }
-
+        
         .about-image {
             flex: 1;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-
+        
         .about-image img {
             width: 100%;
             height: auto;
             display: block;
         }
-
+        
         /* Services */
         .services-text {
             background: white;
@@ -361,6 +362,27 @@
             object-fit: cover;
         }
 
+        /* Indicateurs de carrousel */
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            gap: 10px;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-indicator.active {
+            background-color: #e74c3c;
+        }
+
         /* Flèches */
         .prev, .next {
             position: absolute;
@@ -383,11 +405,17 @@
         .prev:hover, .next:hover {
             background: rgba(0,0,0,0.8);
         }
-
-        /* Événements à Venir - Version Single Event */
+        
+        /* Événements à Venir */
         .events {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
+        }
+
+        .events-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
         }
 
         .single-event {
@@ -534,14 +562,14 @@
             color: #e74c3c;
             font-weight: bold;
         }
-
+        
         /* Équipements */
         .equipment-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
-
+        
         .equipment-item {
             background-color: white;
             padding: 20px;
@@ -550,25 +578,25 @@
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
+        
         .equipment-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
-
+        
         .equipment-item i {
             font-size: 2rem;
             color: #e74c3c;
             margin-bottom: 15px;
         }
-
+        
         /* Localisation */
         .location-content {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-
+        
         .address {
             background-color: white;
             padding: 30px;
@@ -578,7 +606,7 @@
             text-align: center;
             max-width: 600px;
         }
-
+        
         .map {
             width: 100%;
             height: 400px;
@@ -586,56 +614,56 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-
+        
         /* Contact */
         .contact-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
-
+        
         .contact-info {
             background-color: white;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-
+        
         .contact-info h3 {
             margin-bottom: 20px;
             color: #2c3e50;
         }
-
+        
         .contact-item {
             display: flex;
             align-items: center;
             margin-bottom: 15px;
         }
-
+        
         .contact-item i {
             font-size: 1.5rem;
             color: #e74c3c;
             margin-right: 15px;
             min-width: 25px;
         }
-
+        
         .contact-form {
             background-color: white;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-
+        
         .form-group {
             margin-bottom: 20px;
         }
-
+        
         .form-group label {
             display: block;
             margin-bottom: 5px;
             font-weight: 500;
         }
-
+        
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -645,40 +673,40 @@
             font-size: 1rem;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
-
+        
         .form-group input:focus,
         .form-group textarea:focus {
             border-color: #e74c3c;
             box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
             outline: none;
         }
-
+        
         .form-group textarea {
             height: 150px;
             resize: vertical;
         }
-
+        
         /* Pied de page */
         footer {
             background-color: #2c3e50;
             color: white;
             padding: 50px 0 20px;
         }
-
+        
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-bottom: 30px;
         }
-
+        
         .footer-column h3 {
             font-size: 1.3rem;
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
         }
-
+        
         .footer-column h3::after {
             content: '';
             position: absolute;
@@ -688,31 +716,31 @@
             height: 2px;
             background-color: #e74c3c;
         }
-
+        
         .footer-column ul {
             list-style: none;
         }
-
+        
         .footer-column ul li {
             margin-bottom: 10px;
         }
-
+        
         .footer-column ul li a {
             color: #ddd;
             text-decoration: none;
             transition: color 0.3s;
         }
-
+        
         .footer-column ul li a:hover {
             color: #e74c3c;
         }
-
+        
         .social-links {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-
+        
         .social-links a {
             display: inline-flex;
             align-items: center;
@@ -725,12 +753,12 @@
             text-decoration: none;
             transition: background-color 0.3s, transform 0.3s;
         }
-
+        
         .social-links a:hover {
             background-color: #e74c3c;
             transform: translateY(-3px);
         }
-
+        
         .copyright {
             text-align: center;
             padding-top: 20px;
@@ -739,64 +767,140 @@
             color: #ddd;
         }
 
+        /* Styles pour les notifications */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-width: 300px;
+            max-width: 500px;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .notification.success {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .notification.error {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .notification-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .notification-close {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 5px;
+            margin-left: 10px;
+        }
+
+        .notification-close:hover {
+            opacity: 0.8;
+        }
+
+        /* Styles pour les messages d'erreur */
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        /* Animation */
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Style pour le bouton de chargement */
+        .btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .fa-spin {
+            animation: fa-spin 1s infinite linear;
+        }
+
+        @keyframes fa-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 text-align: center;
             }
-
+            
             .logo img {
                 max-height: 60px;
             }
-
+            
             .desktop-nav {
                 display: none;
             }
-
+            
             .hamburger-menu {
                 display: flex;
                 position: absolute;
                 right: 20px;
                 top: 25px;
             }
-
+            
             .about-content {
                 flex-direction: column;
             }
-
+            
             .hero h2 {
                 font-size: 2rem;
             }
-
+            
             .hero p {
                 font-size: 1rem;
             }
-
+            
             .services-gallery {
                 grid-template-columns: 1fr;
             }
-
+            
             .services-carousel {
                 max-width: 100%;
             }
-
+            
             .carousel-track img {
                 height: 250px;
             }
-
+            
             .single-event {
                 flex-direction: column;
             }
-
+            
             .event-visual {
                 min-height: 400px;
             }
-
+            
             .event-title {
                 font-size: 1.8rem;
             }
-
+            
             .event-subtitle {
                 font-size: 1.2rem;
             }
@@ -805,110 +909,122 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo fade-in-left">
-                    <img src="imagetriart.jpg" alt="Logo Centre Tri-Art">
-                </div>
-                
-                <nav class="desktop-nav">
-                    <ul>
-                        <li class="fade-in stagger-delay-1"><a href="#accueil">Accueil</a></li>
-                        <li class="fade-in stagger-delay-2"><a href="#apropos">À propos</a></li>
-                        <li class="fade-in stagger-delay-3"><a href="#services">Services</a></li>
-                        <li class="fade-in stagger-delay-4"><a href="#evenements">Événements</a></li>
-                        <li class="fade-in stagger-delay-5"><a href="#equipements">Équipements</a></li>
-                        <li class="fade-in stagger-delay-5"><a href="#localisation">Localisation</a></li>
-                        <li class="fade-in stagger-delay-5"><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-                
-                <div class="hamburger-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+  <!-- En-tête -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo fade-in-left">
+          <img src="imagetriart.jpg" alt="Logo Centre Multifonctionnel Tri-Art">
         </div>
-        
-        <div class="mobile-nav">
-            <button class="close-menu">
-                <i class="fas fa-times"></i>
-            </button>
-            <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#apropos">À propos</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#evenements">Événements</a></li>
-                <li><a href="#equipements">Équipements</a></li>
-                <li><a href="#localisation">Localisation</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-        
-        <div class="overlay"></div>
-    </header>
 
+        <!-- Navigation Desktop -->
+        <nav class="desktop-nav">
+          <ul>
+            <li class="fade-in stagger-delay-1"><a href="#accueil">Accueil</a></li>
+            <li class="fade-in stagger-delay-2"><a href="#apropos">À propos</a></li>
+            <li class="fade-in stagger-delay-3"><a href="#services">Services</a></li>
+            <li class="fade-in stagger-delay-4"><a href="#evenements">Événements</a></li>
+            <li class="fade-in stagger-delay-5"><a href="#equipements">Équipements</a></li>
+            <li class="fade-in stagger-delay-6"><a href="#localisation">Localisation</a></li>
+            <li class="fade-in stagger-delay-7"><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Menu Hamburger -->
+        <div class="hamburger-menu" aria-label="Menu mobile">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Mobile -->
+    <nav class="mobile-nav" aria-label="Menu mobile">
+      <button class="close-menu" aria-label="Fermer le menu">
+        <i class="fas fa-times"></i>
+      </button>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#evenements">Événements</a></li>
+        <li><a href="#equipements">Équipements</a></li>
+        <li><a href="#localisation">Localisation</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+  </header>
+
+  <!-- Contenu principal -->
+  <main>
+    <!-- Bannière principale -->
     <section id="accueil" class="hero">
-        <div class="container">
-            <h2 class="fade-in">Centre Multifonctionnel Tri-Art</h2>
-            <p class="fade-in stagger-delay-1">Un espace moderne et polyvalent pour vos formations, séminaires et événements culturels à Rufisque Est</p>
-            <a href="#contact" class="btn fade-in stagger-delay-2">Nous contacter</a>
-        </div>
+      <div class="container">
+        <h1 class="fade-in">Centre Multifonctionnel Tri-Art</h1>
+        <p class="fade-in stagger-delay-1">Un espace moderne et polyvalent pour vos formations, séminaires et événements culturels à Rufisque Est.</p>
+        <a href="#contact" class="btn fade-in stagger-delay-2">Nous contacter</a>
+      </div>
     </section>
 
+    <!-- À propos -->
     <section id="apropos" class="about">
-        <div class="container">
-            <div class="section-title">
-                <h2 class="fade-in">À propos de nous</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text fade-in-left">
-                    <p>
-                        Situé à <strong>Rufisque Est</strong> Dakar senegal, au quartier Arafat 4, le <strong>Centre Multifonctionnel Tri-Art</strong> est un lieu moderne et inclusif 
-                        qui offre à la communauté un cadre idéal pour apprendre, créer et partager.
-                    </p>
-                    <p>
-                        Conçu comme un <em>laboratoire de talents</em>, Tri-Art accompagne jeunes, femmes et professionnels dans un esprit de 
-                        <strong>partage</strong>, de <strong>transmission</strong> et d'<strong>inclusion</strong>. 
-                        Sa mission repose sur trois piliers : <strong>formation</strong>, <strong>insertion</strong> et <strong>formalisation</strong>.
-                    </p>
-                    <p>
-                        Le centre dispose d'une salle principale de <strong>250 places assises</strong>, équipée en sonorisation et projection, 
-                        idéale pour séminaires, conférences, projections et spectacles. 
-                        Il comprend aussi des <strong>salles d'ateliers</strong>, un <strong>espace numérique</strong> et un <strong>jardin artistique</strong>.
-                    </p>
-                    <p>
-                        Nos activités couvrent plusieurs domaines : culture (théâtre, ciné-club, expositions, défilés de mode), 
-                        formations pratiques en agro-alimentaire et recyclage créatif, ainsi que l'accompagnement des porteurs de projets pour leur insertion professionnelle.
-                    </p>
-                    <p>
-                        Grâce à sa vision inclusive, Tri-Art est un <strong>espace d'opportunités</strong> où chacun peut développer ses compétences, exprimer son talent 
-                        et contribuer à bâtir une société plus créative et solidaire.
-                    </p>
-                </div>
-                <div class="about-image fade-in-right">
-                    <img src="imagetriart.jpg" alt="Centre Tri-Art">
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2 class="fade-in">À propos de nous</h2>
         </div>
+        <div class="about-content">
+          <div class="about-text fade-in-left">
+            <p>
+              Situé à <strong>Rufisque Est</strong>, Dakar Sénégal, au quartier Arafat 4, le <strong>Centre Multifonctionnel Tri-Art</strong> est un lieu moderne et inclusif 
+              qui offre à la communauté un cadre idéal pour apprendre, créer et partager.
+            </p>
+            <p>
+              Conçu comme un <em>laboratoire de talents</em>, Tri-Art accompagne jeunes, femmes et professionnels dans un esprit de 
+              <strong>partage</strong>, de <strong>transmission</strong> et d'<strong>inclusion</strong>. 
+              Sa mission repose sur trois piliers : <strong>formation</strong>, <strong>insertion</strong> et <strong>formalisation</strong>.
+            </p>
+            <p>
+              Le centre dispose d'une salle principale de <strong>250 places assises</strong>, équipée en sonorisation et projection, 
+              idéale pour séminaires, conférences, projections et spectacles. 
+              Il comprend aussi des <strong>salles d'ateliers</strong>, un <strong>espace numérique</strong> et un <strong>jardin artistique</strong>.
+            </p>
+            <p>
+              Nos activités couvrent plusieurs domaines : culture (théâtre, ciné-club, expositions, défilés de mode), 
+              formations pratiques en agro-alimentaire et recyclage créatif, ainsi que l'accompagnement des porteurs de projets pour leur insertion professionnelle.
+            </p>
+            <p>
+              Grâce à sa vision inclusive, Tri-Art est un <strong>espace d'opportunités</strong> où chacun peut développer ses compétences, exprimer son talent 
+              et contribuer à bâtir une société plus créative et solidaire.
+            </p>
+          </div>
+          <div class="about-image fade-in-right">
+            <img src="imagetriart.jpg" alt="Façade du Centre Tri-Art">
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- Services -->
     <section id="services" class="services">
         <div class="container">
             <div class="section-title">
                 <h2 class="fade-in">Nos Services</h2>
             </div>
 
+            <!-- Bloc Texte -->
             <div class="services-text fade-in">
                 <p>
                     Au <strong>Centre Multifonctionnel Tri-Art</strong>, nous mettons à votre disposition un 
-                    éventail complet de services adaptés aux besoins des jeunes, des professionnels, des associations et des entreprises. 
+                    éventail complet de services adaptés aux besoins des jeunes, des professionnels, des associations et des entreprises.  
                     Notre objectif est de vous offrir un cadre convivial, moderne et inclusif pour apprendre, partager et développer vos projets.
                 </p>
             </div>
 
+            <!-- Cartes de Services -->
             <div class="equipment-list">
                 <div class="equipment-item fade-in-scale stagger-delay-1">
                     <i class="fas fa-chalkboard-teacher"></i>
@@ -932,12 +1048,14 @@
                 </div>
             </div>
 
+            <!-- Galerie 3 images -->
             <div class="services-gallery">
                 <img src="service1.jpg" alt="Formations professionnelles" class="fade-in-scale stagger-delay-1">
                 <img src="service2.jpg" alt="Événements culturels" class="fade-in-scale stagger-delay-2">
                 <img src="service3.jpg" alt="Séminaires d'entreprise" class="fade-in-scale stagger-delay-3">
             </div>
 
+            <!-- Carrousel Slide -->
             <div class="services-carousel fade-in">
                 <div class="carousel-track">
                     <img src="carrousel1.jpg" alt="Atelier créatif">
@@ -952,61 +1070,116 @@
                     <img src="WhatsApp Image 2025-09-29 at 15.13.12 (1).jpeg" alt="Ciné-club">
                 </div>
                 
+                <!-- Flèches -->
                 <button class="prev">&#10094;</button>
                 <button class="next">&#10095;</button>
             </div>
         </div>
     </section>
 
+    <!-- Événements à Venir -->
     <section id="evenements" class="events">
         <div class="container">
             <div class="section-title">
-                <h2 class="fade-in" style="color: white;">Événement à Venir</h2>
+                <h2 class="fade-in" style="color: white;">Événements à Venir</h2>
             </div>
 
-            <div class="single-event fade-in-scale">
-                <div class="event-visual">
-                    <div class="event-date-badge">
-                        <span class="event-month">Novembre</span>
-                        <span class="event-day">14 & 15</span>
-                        <span class="event-year">2025</span>
+            <div class="events-container">
+                <!-- Premier événement -->
+                <div class="single-event fade-in-scale">
+                    <div class="event-visual">
+                        <div class="event-date-badge">
+                            <span class="event-month">Novembre</span>
+                            <span class="event-day">14 & 15</span>
+                            <span class="event-year">2025</span>
+                        </div>
+                        <div class="event-image">
+                            <img src="event1.jpeg" alt="Exposition Recyclage Poudre de Bois">
+                        </div>
                     </div>
-                    <div class="event-image">
-                        <img src="event1.jpeg" alt="Exposition Recyclage Poudre de Bois">
+                    <div class="event-content">
+                        <h2 class="event-title">EXPOSITION</h2>
+                        <h3 class="event-subtitle">SALON DES ARTS ET TABLEAUX DES PRODUITS</h3>
+                        <div class="event-info">
+                            <i class="fas fa-recycle"></i>
+                            <span>Recyclage en Poudre de Bois</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Les 14 & 15 Novembre 2025</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>14 Avenue René Boylesve, Paris 75016</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-clock"></i>
+                            <span>Horaires: 10h00 - 19h00</span>
+                        </div>
+                        <p class="event-description">
+    Laissez-vous emporter par la métamorphose artistique où les résidus de bois 
+    prennent vie sous forme d'œuvres captivantes. Un voyage sensoriel au cœur 
+    de l'éco-créativité, où chaque tableau raconte une histoire de renaissance 
+    et d'innovation durable.
+</p>
+                        <div class="event-cta">
+                            <a href="https://wa.me/221776332771?text=Bonjour%2C%20je%20souhaiterais%20r%C3%A9server%20ma%20place%20pour%20votre%20%C3%A9v%C3%A9nement.%20Pouvez-vous%20m%E2%80%99envoyer%20plus%20de%20d%C3%A9tails%20s%E2%80%99il%20vous%20pla%C3%AEt%20%3F" 
+                            target="_blank" class="btn-reserver">
+                            <button class="event-btn">Réserver ma place</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="event-content">
-                    <h2 class="event-title">EXPOSITION</h2>
-                    <h3 class="event-subtitle">SALON DES ARTS ET TABLEAUX DES PRODUITS</h3>
-                    <div class="event-info">
-                        <i class="fas fa-recycle"></i>
-                        <span>Recyclage en Poudre de Bois</span>
+
+                <!-- Deuxième événement -->
+                <div class="single-event fade-in-scale">
+                    <div class="event-visual">
+                        <div class="event-date-badge">
+                            <span class="event-month">Novembre</span>
+                            <span class="event-day">21&22</span>
+                            <span class="event-year">2025</span>
+                        </div>
+                        <div class="event-image">
+                            <img src="events2.jpeg" alt="Festival d'Art Contemporain">
+                        </div>
                     </div>
-                    <div class="event-info">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Les 14 & 15 Novembre 2025</span>
-                    </div>
-                    <div class="event-info">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>14 Avenue René Boylesve, Paris 75016</span>
-                    </div>
-                    <div class="event-info">
-                        <i class="fas fa-clock"></i>
-                        <span>Horaires: 10h00 - 19h00</span>
-                    </div>
-                    <p class="event-description">
-                        Une exposition unique mettant en lumière l'art du recyclage et la transformation 
-                        de la poudre de bois en œuvres d'art remarquables. Découvrez des tableaux innovants 
-                        et des créations artistiques éco-responsables.
-                    </p>
-                    <div class="event-cta">
-                        <button class="event-btn">Réserver ma place</button>
+                    <div class="event-content">
+                        <h2 class="event-title">EXPOSITION</h2>
+                        <h3 class="event-subtitle">SALON DES ARTS ET TABLEAUX DES PRODUITS</h3>
+                        <div class="event-info">
+                            <i class="fas fa-palette"></i>
+                            <span>Recyclage en Poudre de Bois</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Le 21 & 22 Décembre 2025</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Centre Tri-Art, Rufisque Est</span>
+                        </div>
+                        <div class="event-info">
+                            <i class="fas fa-clock"></i>
+                            <span>Horaires: 09h00 - 22h00</span>
+                        </div>
+                        <p class="event-description">
+                            Un festival unique mêlant art contemporain et nouvelles technologies. 
+                            Découvrez des installations interactives, des performances live et des 
+                            œuvres d'art digital qui repoussent les limites de la créativité.
+                        </p>
+                        <div class="event-cta">
+                            <a href="https://wa.me/221776332771?text=Bonjour%2C%20je%20souhaiterais%20r%C3%A9server%20ma%20place%20pour%20le%20festival%20d'art%20contemporain.%20Pouvez-vous%20m%E2%80%99envoyer%20plus%20de%20d%C3%A9tails%20s%E2%80%99il%20vous%20pla%C3%AEt%20%3F" 
+                            target="_blank" class="btn-reserver">
+                            <button class="event-btn">Réserver ma place</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Équipements -->
     <section id="equipements" class="equipment">
         <div class="container">
             <div class="section-title">
@@ -1018,30 +1191,31 @@
                     <h3>Écran géant</h3>
                 </div>
                 <div class="equipment-item fade-in-scale stagger-delay-2">
-                    <i class="fas fa-volume-up"></i>
-                    <h3>Sonorisation</h3>
+                    <i class="fas fa-video"></i>
+                    <h3>Vidéo projecteur</h3>
                 </div>
                 <div class="equipment-item fade-in-scale stagger-delay-3">
-                    <i class="fas fa-wifi"></i>
-                    <h3>Connexion Internet</h3>
+                    <i class="fas fa-film"></i>
+                    <h3>Télé-vidéo</h3>
                 </div>
                 <div class="equipment-item fade-in-scale stagger-delay-4">
-                    <i class="fas fa-projector"></i>
-                    <h3>Projecteur et Matériel</h3>
+                    <i class="fas fa-camera"></i>
+                    <h3>Caméra</h3>
+                </div>
+                <div class="equipment-item fade-in-scale stagger-delay-5">
+                    <i class="fas fa-volume-up"></i>
+                    <h3>Régie son et lumière</h3>
                 </div>
                 <div class="equipment-item fade-in-scale stagger-delay-5">
                     <i class="fas fa-chair"></i>
                     <h3>250 places assises</h3>
                 </div>
-                <div class="equipment-item fade-in-scale stagger-delay-6">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Éclairage de scène</h3>
-                </div>
             </div>
         </div>
     </section>
-    
-    <section id="localisation" class="location">
+
+    <!-- Localisation -->
+       <section id="localisation" class="location">
         <div class="container">
             <div class="section-title">
                 <h2 class="fade-in">Notre Localisation</h2>
@@ -1062,216 +1236,311 @@
             </div>
         </div>
     </section>
-    
+
+    <!-- Contact -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-title">
-                <h2 class="fade-in">Nous Contacter</h2>
+                <h2 class="fade-in">Contactez-nous</h2>
             </div>
             <div class="contact-content">
                 <div class="contact-info fade-in-left">
-                    <h3>Informations de Contact</h3>
+                    <h3>Informations de contact</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Cité Mademba Ngom, près de la SENICO<br>Quartier Arafat 4, Commune de Rufisque Est</p>
+                    </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <span>+221 77 123 45 67</span>
+                        <p>+221 77 633 27 71</p>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>contact@triart.sn</span>
+                        <p>triarts2023@gmail.com</p>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Quartier Arafat 4, Rufisque Est, Dakar</span>
-                    </div>
-                    <h3>Suivez-nous</h3>
-                    <div class="social-links">
-                        <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <i class="fas fa-clock"></i>
+                        <p>Lundi - Vendredi: 8h00 - 18h00<br>Samedi: 9h00 - 13h00</p>
                     </div>
                 </div>
-                <form class="contact-form fade-in-right" id="contact-form">
-                    <h3>Envoyez-nous un Message</h3>
-                    <div class="form-group">
-                        <label for="name">Nom et prénom</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Sujet</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Votre message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Envoyer</button>
-                    <div id="status-message"></div>
-                </form>
+                <div class="contact-form fade-in-right">
+                    <h3>Envoyez-nous un message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" name="name" required class="fade-in-scale stagger-delay-1">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Adresse email</label>
+                            <input type="email" id="email" name="email" required class="fade-in-scale stagger-delay-2">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <input type="text" id="subject" name="subject" required class="fade-in-scale stagger-delay-3">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required class="fade-in-scale stagger-delay-4"></textarea>
+                        </div>
+                        <button type="submit" class="btn fade-in-scale stagger-delay-5">Envoyer le message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
-    
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column fade-in-scale stagger-delay-1">
-                    <h3>Tri-Art</h3>
-                    <p>Un espace moderne et inclusif pour la formation, la création et le partage à Rufisque Est.</p>
-                </div>
-                <div class="footer-column fade-in-scale stagger-delay-2">
-                    <h3>Liens Rapides</h3>
-                    <ul>
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#apropos">À propos</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column fade-in-scale stagger-delay-3">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><i class="fas fa-phone"></i> +221 77 123 45 67</li>
-                        <li><i class="fas fa-envelope"></i> contact@triart.sn</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Quartier Arafat 4, Rufisque Est</li>
-                    </ul>
-                </div>
-                <div class="footer-column fade-in-scale stagger-delay-4">
-                    <h3>Suivez-nous</h3>
-                    <div class="social-links">
-                        <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Centre Tri-Art. Tous droits réservés.</p>
-            </div>
+  </main>
+
+  <!-- Pied de page -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>À propos</h3>
+          <p>Le Centre Multifonctionnel Tri-Art est un lieu de culture, de formation et d'innovation à Rufisque Est.</p>
         </div>
-    </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        // Animations au scroll
-        function handleScrollAnimations() {
-            const elements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale');
-            const windowHeight = window.innerHeight;
+        <div class="footer-column">
+          <h3>Liens rapides</h3>
+          <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#evenements">Événements</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Suivez-nous</h3>
+          <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61575092460122"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@labeltriart"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Labeltriart"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">© 2025 Centre Multifonctionnel Tri-Art - Tous droits réservés.</p>
+    </div>
+  </footer>
 
-            elements.forEach(el => {
-                const elementTop = el.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) {
-                    el.classList.add('visible');
-                }
-            });
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  
+  <script>
+    // Initialisation d'EmailJS
+    emailjs.init("YOUR_PUBLIC_KEY"); // Remplacez par votre Public Key
+
+    // Fonction pour envoyer l'email
+    function sendEmail(event) {
+        event.preventDefault();
+        
+        // Afficher l'indicateur de chargement
+        const submitBtn = event.target.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+        submitBtn.disabled = true;
+        
+        // Récupérer les données du formulaire
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value,
+            to_email: 'triarts2023@gmail.com',
+            date: new Date().toLocaleString('fr-FR')
+        };
+        
+        // Valider le formulaire
+        const errors = validateForm(formData);
+        if (errors.length > 0) {
+            showNotification('Veuillez corriger les erreurs dans le formulaire', 'error');
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            return;
         }
-        window.addEventListener('scroll', handleScrollAnimations);
-        window.addEventListener('load', handleScrollAnimations);
+        
+        // Envoyer l'email avec VOS identifiants
+        emailjs.send("service_dpfk5u4", "template_d125pcg", formData)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                showNotification('Message envoyé avec succès! Nous vous répondrons bientôt.', 'success');
+                event.target.reset();
+            })
+            .catch(function(error) {
+                console.log('FAILED...', error);
+                showNotification('Erreur lors de l\'envoi. Veuillez réessayer ou nous contacter directement.', 'error');
+            })
+            .finally(function() {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+    }
 
-        // Menu hamburger mobile
-        const hamburger = document.querySelector('.hamburger-menu');
-        const mobileNav = document.querySelector('.mobile-nav');
-        const closeMenu = document.querySelector('.close-menu');
-        const overlay = document.querySelector('.overlay');
-        const mobileLinks = document.querySelectorAll('.mobile-nav a');
-
-        hamburger.addEventListener('click', () => {
-            mobileNav.classList.add('active');
-            overlay.classList.add('active');
-        });
-
-        closeMenu.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-            overlay.classList.remove('active');
-        });
-
-        overlay.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-            overlay.classList.remove('active');
+    // Fonction pour afficher les notifications
+    function showNotification(message, type) {
+        // Supprimer les notifications existantes
+        const existingNotifications = document.querySelectorAll('.notification');
+        existingNotifications.forEach(notification => notification.remove());
+        
+        // Créer la notification
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.innerHTML = `
+            <div class="notification-content">
+                <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                <span>${message}</span>
+            </div>
+            <button class="notification-close">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+        
+        // Ajouter au document
+        document.body.appendChild(notification);
+        
+        // Fermer la notification
+        notification.querySelector('.notification-close').addEventListener('click', () => {
+            notification.remove();
         });
         
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNav.classList.remove('active');
-                overlay.classList.remove('active');
-            });
+        // Supprimer automatiquement après 5 secondes
+        setTimeout(() => {
+            if (notification.parentElement) {
+                notification.remove();
+            }
+        }, 5000);
+    }
+
+    // Validation du formulaire
+    function validateForm(formData) {
+        const errors = [];
+        
+        if (!formData.name.trim()) errors.push('Le nom est requis');
+        if (!formData.email.trim()) {
+            errors.push('L\'email est requis');
+        } else if (!isValidEmail(formData.email)) {
+            errors.push('L\'email n\'est pas valide');
+        }
+        if (!formData.subject.trim()) errors.push('Le sujet est requis');
+        if (!formData.message.trim()) errors.push('Le message est requis');
+        
+        return errors;
+    }
+
+    // Validation d'email
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    // Script pour le menu hamburger
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const closeMenu = document.querySelector('.close-menu');
+    const overlay = document.querySelector('.overlay');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+
+    // Ouvrir le menu
+    hamburgerMenu.addEventListener('click', () => {
+        mobileNav.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Fermer le menu
+    function closeMobileMenu() {
+        mobileNav.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    closeMenu.addEventListener('click', closeMobileMenu);
+    overlay.addEventListener('click', closeMobileMenu);
+
+    // Fermer le menu quand on clique sur un lien
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Script pour les animations fade in au défilement
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
         });
+    }, observerOptions);
 
-        // Carrousel
-        const carouselTrack = document.querySelector('.carousel-track');
-        const prevBtn = document.querySelector('.prev');
-        const nextBtn = document.querySelector('.next');
-        const slides = Array.from(carouselTrack.children);
-        const slideWidth = slides[0].getBoundingClientRect().width;
-        let slideIndex = 0;
+    // Observer tous les éléments avec les classes d'animation
+    document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale').forEach(el => {
+        observer.observe(el);
+    });
 
-        const setSlidePosition = (slide, index) => {
-            slide.style.left = slideWidth * index + 'px';
-        };
-        slides.forEach(setSlidePosition);
-
-        const moveToSlide = (track, currentSlide, targetSlide) => {
-            track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
-            currentSlide.classList.remove('current-slide');
-            targetSlide.classList.add('current-slide');
-        };
-
-        const updateButtons = (targetIndex) => {
-            if (targetIndex === 0) {
-                prevBtn.style.display = 'none';
-            } else {
-                prevBtn.style.display = 'block';
-            }
-            if (targetIndex === slides.length - 1) {
-                nextBtn.style.display = 'none';
-            } else {
-                nextBtn.style.display = 'block';
-            }
-        };
-
-        nextBtn.addEventListener('click', () => {
-            if (slideIndex < slides.length - 1) {
-                slideIndex++;
-                carouselTrack.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
-            }
-        });
-
-        prevBtn.addEventListener('click', () => {
-            if (slideIndex > 0) {
-                slideIndex--;
-                carouselTrack.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
-            }
-        });
-
-        // Initialisation de EmailJS
-        (function() {
-            emailjs.init("l-m2zP6S87x46fG6w"); // Remplacez par votre clé publique (user ID)
-        })();
-
-        // Envoi du formulaire de contact
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const statusMessage = document.getElementById('status-message');
+    // Script pour le défilement fluide vers les ancres
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
             
-            statusMessage.style.color = '#e74c3c';
-            statusMessage.textContent = 'Envoi en cours...';
-
-            emailjs.sendForm('service_z8a745c', 'template_r6f120g', this) // Remplacez par vos IDs de service et de template
-                .then(function() {
-                    statusMessage.style.color = '#27ae60';
-                    statusMessage.textContent = 'Votre message a été envoyé avec succès !';
-                    document.getElementById('contact-form').reset();
-                }, function(error) {
-                    statusMessage.style.color = '#e74c3c';
-                    statusMessage.textContent = 'Échec de l\'envoi. Veuillez réessayer plus tard.';
-                    console.error('Échec de l\'envoi...', error);
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
                 });
+            }
         });
-    </script>
+    });
+
+    // Script pour le carrousel slide
+    const track = document.querySelector(".carousel-track");
+    if (track) {
+        const slides = Array.from(track.children);
+        const nextBtn = document.querySelector(".next");
+        const prevBtn = document.querySelector(".prev");
+        let currentIndex = 0;
+
+        // Fonction pour afficher la slide
+        function updateSlide(index) {
+            track.style.transform = `translateX(-${index * 100}%)`;
+            currentIndex = index;
+        }
+
+        // Bouton suivant
+        if(nextBtn){
+            nextBtn.addEventListener("click", () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlide(currentIndex);
+            });
+        }
+
+        // Bouton précédent
+        if(prevBtn){
+            prevBtn.addEventListener("click", () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateSlide(currentIndex);
+            });
+        }
+
+        // Défilement auto toutes les 5s
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlide(currentIndex);
+        }, 5000);
+    }
+
+    // Initialisation du formulaire de contact
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contact-form');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', sendEmail);
+        }
+    });
+  </script>
 </body>
 </html>
